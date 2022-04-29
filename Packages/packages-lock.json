@@ -12,7 +12,7 @@
       "url": "https://package.openupm.com"
     },
     "com.unity.burst": {
-      "version": "1.6.4",
+      "version": "1.6.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -76,7 +76,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
-      "version": "1.2.5",
+      "version": "1.2.6",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -94,7 +94,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
-      "version": "12.1.4",
+      "version": "12.1.6",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
@@ -104,14 +104,14 @@
       }
     },
     "com.unity.render-pipelines.universal": {
-      "version": "12.1.4",
+      "version": "12.1.6",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
         "com.unity.burst": "1.5.0",
-        "com.unity.render-pipelines.core": "12.1.4",
-        "com.unity.shadergraph": "12.1.4"
+        "com.unity.render-pipelines.core": "12.1.6",
+        "com.unity.shadergraph": "12.1.6"
       }
     },
     "com.unity.searcher": {
@@ -129,11 +129,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
-      "version": "12.1.4",
+      "version": "12.1.6",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
-        "com.unity.render-pipelines.core": "12.1.4",
+        "com.unity.render-pipelines.core": "12.1.6",
         "com.unity.searcher": "4.9.1"
       }
     },
@@ -179,12 +179,12 @@
       }
     },
     "com.unity.visualeffectgraph": {
-      "version": "12.1.4",
+      "version": "12.1.6",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.shadergraph": "12.1.4",
-        "com.unity.render-pipelines.core": "12.1.4"
+        "com.unity.shadergraph": "12.1.6",
+        "com.unity.render-pipelines.core": "12.1.6"
       }
     },
     "com.unity.visualscripting": {
