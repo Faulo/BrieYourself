@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -6,16 +5,16 @@ namespace BrieYourself.Characters.AIStateMachines {
     public abstract class ArtificialBehaviour : StateMachineBehaviour {
         protected ArtificialInput input { get; private set; }
         protected Animator animator { get; private set; }
-        
+
         protected Character character { get; private set; }
-        
+
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo,
             int layerIndex) {
             this.animator = animator;
             input = animator.GetComponent<ArtificialInput>();
             character = input.character;
             Assert.IsTrue(input, $"Animator {animator} does not have a {typeof(ArtificialInput)} component!");
-            
+
             StateEnter(stateInfo, layerIndex);
         }
 

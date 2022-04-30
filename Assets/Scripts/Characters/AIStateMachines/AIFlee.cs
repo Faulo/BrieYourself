@@ -5,7 +5,7 @@ namespace BrieYourself.Characters.AIStateMachines {
     public class AIFlee : ArtificialBehaviour {
         [SerializeField] float _fleeSpeed = 2f;
         protected override void StateEnter(in AnimatorStateInfo stateInfo, int layerIndex) {
-            
+
         }
 
         protected override void StateUpdate(in AnimatorStateInfo stateInfo, int layerIndex) {

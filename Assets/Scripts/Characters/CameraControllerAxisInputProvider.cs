@@ -2,7 +2,7 @@ using System;
 using Cinemachine;
 using UnityEngine;
 
-namespace BrieYourself {
+namespace BrieYourself.Characters {
     public class CameraControllerAxisInputProvider : MonoBehaviour, AxisState.IInputAxisProvider {
         [SerializeField]
         bool useXAxis = true;

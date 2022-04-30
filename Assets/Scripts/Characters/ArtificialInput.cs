@@ -1,27 +1,24 @@
 using UnityEngine;
 
-namespace BrieYourself.Characters
-{
+namespace BrieYourself.Characters {
     public class ArtificialInput : ComponentFeature<Character> {
         [SerializeField] float _hostileDetectionRadius;
         [SerializeField] LayerMask _whatIsHostile;
         [SerializeField] Animator _attachedAnimator;
-        
-         public Transform closestHostile { get; private set; }
 
-         public Character character => observedComponent;
+        public Transform closestHostile { get; private set; }
 
-        protected void FixedUpdate()
-        { 
+        public Character character => observedComponent;
+
+        protected void FixedUpdate() {
             DetectHostiles();
         }
-        
-        void DetectHostiles()
-        {
-            var hits = Physics.SphereCastAll(this.transform.position, _hostileDetectionRadius,
+
+        void DetectHostiles() {
+            var hits = Physics.SphereCastAll(transform.position, _hostileDetectionRadius,
                 transform.forward, _hostileDetectionRadius, _whatIsHostile);
-            
-            foreach(var hit in hits) {
+
+            foreach (var hit in hits) {
                 if (!closestHostile) {
                     closestHostile = hit.transform;
                 }
@@ -34,7 +31,7 @@ namespace BrieYourself.Characters
                 _attachedAnimator.SetFloat("closestHostileDistance", closestHostileDistance);
             }
         }
-        
+
         protected override void OnValidate() {
             if (!_attachedAnimator) {
                 TryGetComponent(out _attachedAnimator);

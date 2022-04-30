@@ -6,7 +6,7 @@ namespace BrieYourself.Channels {
 
         [ContextMenu("Test")]
         void RaiseEvent() {
-            _gameObjectEventChannel.Raise(this.gameObject);
+            _gameObjectEventChannel.Raise(gameObject);
         }
     }
 }

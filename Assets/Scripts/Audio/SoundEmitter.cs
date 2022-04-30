@@ -2,51 +2,46 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace BrieYourself.Audio
-{
+namespace BrieYourself.Audio {
     [RequireComponent(typeof(AudioSource))]
-    public class SoundEmitter : MonoBehaviour
-    {
-        private AudioSource _audioSource;
-        
+    public class SoundEmitter : MonoBehaviour {
+        AudioSource _audioSource;
+
         public event Action<SoundEmitter> onSoundFinishedPlaying;
 
-        private void Awake()
-        {
+        void Awake() {
             _audioSource = GetComponent<AudioSource>();
             _audioSource.playOnAwake = false;
-            
+
         }
 
-        public void PlayAudioClip(AudioClip audioClip, AudioConfigSo config, bool hasToLoop, Vector3 position = default)
-        {
-            _audioSource.clip = audioClip; 
+        public void PlayAudioClip(AudioClip audioClip, AudioConfigSo config, bool hasToLoop, Vector3 position = default) {
+            _audioSource.clip = audioClip;
             config.ApplyConfigToAudioSource(_audioSource);
             _audioSource.transform.position = position;
             _audioSource.loop = hasToLoop;
             _audioSource.Play();
 
-            if (hasToLoop) return;
+            if (hasToLoop) {
+                return;
+            }
+
             StartCoroutine(FinishedPlayingEnumerator(audioClip.length));
         }
 
-        public void Resume()
-        {
+        public void Resume() {
             _audioSource.Play();
         }
 
-        public void Pause()
-        {
+        public void Pause() {
             _audioSource.Pause();
         }
-        
-        public void Stop()
-        {
+
+        public void Stop() {
             _audioSource.Stop();
         }
-        
-        public bool IsLooping()
-        {
+
+        public bool IsLooping() {
             return _audioSource.loop;
         }
 
@@ -61,9 +56,8 @@ namespace BrieYourself.Audio
         public float GetVolume() {
             return _audioSource.volume;
         }
-        
-        private IEnumerator FinishedPlayingEnumerator(float clipLength)
-        {
+
+        IEnumerator FinishedPlayingEnumerator(float clipLength) {
             yield return new WaitForSeconds(clipLength);
             onSoundFinishedPlaying?.Invoke(this);
         }

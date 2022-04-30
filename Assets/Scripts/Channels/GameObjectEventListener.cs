@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace BrieYourself.Channels {
     public class GameObjectEventListener : MonoBehaviour {
-        [SerializeField, Expandable()] 
+        [SerializeField, Expandable()]
         GameObjectEventChannel _gameObjectEventChannel;
         [SerializeField]
         UnityEvent<GameObject> _response;
@@ -14,7 +14,7 @@ namespace BrieYourself.Channels {
         }
 
         protected void OnDisable() {
-            _gameObjectEventChannel.eventRaised -= Respond;   
+            _gameObjectEventChannel.eventRaised -= Respond;
         }
 
         void Respond(GameObject obj) {
