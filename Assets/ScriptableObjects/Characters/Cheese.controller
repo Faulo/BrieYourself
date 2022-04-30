@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5294882945685333093
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec084dca07321643b5bbbe8a4e3151c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onStateEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 58d49eb91fc0c6242bd64c788345ec7a, type: 2}
-        m_TargetAssemblyTypeName: BrieYourself.Effects.CharacterEffect, BrieYourself
-        m_MethodName: StartJumping
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onStateUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  onStateExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 58d49eb91fc0c6242bd64c788345ec7a, type: 2}
-        m_TargetAssemblyTypeName: BrieYourself.Effects.CharacterEffect, BrieYourself
-        m_MethodName: StopJumping
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1102 &-4436548792970576793
 AnimatorState:
   serializedVersion: 6
@@ -61,7 +16,7 @@ AnimatorState:
   - {fileID: 4077366258362667516}
   m_StateMachineBehaviours:
   - {fileID: 6598052637162946227}
-  - {fileID: -5294882945685333093}
+  - {fileID: 7979759898248522026}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -85,7 +40,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: intendsJump
+    m_ConditionEvent: intendsJumpStart
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4436548792970576793}
@@ -199,6 +154,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: intendsJump
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: intendsJumpStart
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -348,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applyDrag: 1
-  dragMultiplier: 4
+  dragMultiplier: 2
   applyGravity: 1
   gravityMultiplier: 1
   applyMovement: 1
@@ -412,8 +373,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applyDrag: 1
-  dragMultiplier: 2
+  dragMultiplier: 1.5
   applyGravity: 1
-  gravityMultiplier: 2
+  gravityMultiplier: 1.5
   applyMovement: 1
   movementMultiplier: 0.75
+--- !u!114 &7979759898248522026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d790c588906596498a5248855996422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

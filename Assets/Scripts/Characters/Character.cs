@@ -28,7 +28,16 @@ namespace BrieYourself.Characters {
         }
         public bool intendsJump {
             get => attachedAnimator.GetBool(nameof(intendsJump));
-            set => attachedAnimator.SetBool(nameof(intendsJump), value);
+            set {
+                if (!intendsJump && value) {
+                    intendsJumpStart = true;
+                }
+                attachedAnimator.SetBool(nameof(intendsJump), value);
+            }
+        }
+        public bool intendsJumpStart {
+            get => attachedAnimator.GetBool(nameof(intendsJumpStart));
+            set => attachedAnimator.SetBool(nameof(intendsJumpStart), value);
         }
 
 
@@ -53,7 +62,7 @@ namespace BrieYourself.Characters {
 
         public float verticalSpeed {
             get => attachedAnimator.GetFloat(nameof(verticalSpeed));
-            private set => attachedAnimator.SetFloat(nameof(verticalSpeed), value);
+            set => attachedAnimator.SetFloat(nameof(verticalSpeed), value);
         }
 
         public Vector3 velocity {
@@ -83,7 +92,7 @@ namespace BrieYourself.Characters {
             isGrounded = attachedController.isGrounded;
 
             if (attachedController.isGrounded) {
-                verticalSpeed = 0;
+                verticalSpeed = Physics.gravity.y * Time.deltaTime;
             }
         }
         public void StartJumping() {
