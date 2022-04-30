@@ -73,6 +73,8 @@ namespace BrieYourself.Characters {
             }
         }
 
+        [Header("Runtime fields")]
+        [SerializeField]
         public Vector2 movementAcceleration = Vector2.zero;
 
         protected void OnValidate() {
