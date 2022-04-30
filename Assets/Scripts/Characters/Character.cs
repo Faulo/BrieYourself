@@ -13,9 +13,9 @@ namespace BrieYourself.Characters {
 
         [Header("Runtime fields")]
         [SerializeField]
-        public CharacterIntentions intentions = new CharacterIntentions();
+        public CharacterIntentions intentions = new();
         [SerializeField]
-        public CharacterPhysics physics = new CharacterPhysics();
+        public CharacterPhysics physics = new();
 
         Vector2 movementAcceleration = Vector2.zero;
 
@@ -25,14 +25,14 @@ namespace BrieYourself.Characters {
         protected void FixedUpdate() {
             physics.velocity = Vector2.SmoothDamp(
                 physics.velocity.SwizzleXZ(),
-                config.maximumSpeed * intentions.intendeMovement,
+                config.maximumSpeed * intentions.intendedMovement,
                 ref movementAcceleration,
                 config.accelerationDuration
             ).SwizzleXZ().WithY(physics.velocity.y);
 
-            physics.velocity += Time.deltaTime * Physics.gravity;
+            physics.velocity += Physics.gravity * Time.deltaTime;
 
-            attachedController.Move(physics.velocity);
+            attachedController.Move(physics.velocity * Time.deltaTime);
 
             if (attachedController.isGrounded) {
                 physics.velocity.y = 0;
