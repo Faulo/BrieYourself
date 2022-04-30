@@ -48,7 +48,6 @@ namespace BrieYourself.Characters {
             set => attachedAnimator.SetBool(nameof(intendsJumpStart), value);
         }
 
-
         public bool isGrounded {
             get => attachedAnimator.GetBool(nameof(isGrounded));
             private set => attachedAnimator.SetBool(nameof(isGrounded), value);
@@ -96,6 +95,8 @@ namespace BrieYourself.Characters {
         public Vector2 movementAcceleration = Vector2.zero;
         [SerializeField, ReadOnly]
         public float rotationAcceleration = 0;
+        [SerializeField, ReadOnly]
+        public Vector2 intendedLook = Vector2.zero;
 
         public event InputProcessor onProcessInput;
 
