@@ -1,17 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-namespace BrieYourself
+namespace BrieYourself.Characters
 {
-    public class ArtificialInput : MonoBehaviour {
+    public class ArtificialInput : ComponentFeature<Character> {
         [SerializeField] float _hostileDetectionRadius;
         [SerializeField] LayerMask _whatIsHostile;
         [SerializeField] Animator _attachedAnimator;
-        Transform _closestHostile;
         
+         public Transform closestHostile { get; private set; }
+
+         public Character character => observedComponent;
+
         protected void FixedUpdate()
         { 
             DetectHostiles();
@@ -23,20 +22,20 @@ namespace BrieYourself
                 transform.forward, _hostileDetectionRadius, _whatIsHostile);
             
             foreach(var hit in hits) {
-                if (!_closestHostile) {
-                    _closestHostile = hit.transform;
+                if (!closestHostile) {
+                    closestHostile = hit.transform;
                 }
                 float hitDistance = Mathf.Abs(Vector3.Distance(transform.position, hit.transform.position));
-                float closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, _closestHostile.position));
+                float closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, closestHostile.position));
                 if (hitDistance < closestHostileDistance) {
-                    _closestHostile = hit.transform;
+                    closestHostile = hit.transform;
                 }
-                closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, _closestHostile.position));
-                Debug.Log(closestHostileDistance);
+                closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, closestHostile.position));
                 _attachedAnimator.SetFloat("closestHostileDistance", closestHostileDistance);
             }
         }
-        protected void OnValidate() {
+        
+        protected override void OnValidate() {
             if (!_attachedAnimator) {
                 TryGetComponent(out _attachedAnimator);
             }
