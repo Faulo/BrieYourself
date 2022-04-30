@@ -16,6 +16,12 @@ namespace BrieYourself.Characters.StateMachines {
 
         [Space]
         [SerializeField]
+        bool applyRotation = true;
+        [SerializeField, ConditionalField(nameof(applyMovement))]
+        float rotationMultiplier = 1;
+
+        [Space]
+        [SerializeField]
         bool applyMovement = true;
         [SerializeField, ConditionalField(nameof(applyMovement))]
         float movementMultiplier = 1;
@@ -26,6 +32,9 @@ namespace BrieYourself.Characters.StateMachines {
             }
             if (applyGravity) {
                 ApplyGravity();
+            }
+            if (applyRotation) {
+                ApplyRotation();
             }
             if (applyMovement) {
                 ApplyMovement();
@@ -38,6 +47,15 @@ namespace BrieYourself.Characters.StateMachines {
 
         void ApplyGravity() {
             character.velocity += gravityMultiplier * Time.deltaTime * Physics.gravity;
+        }
+
+        void ApplyRotation() {
+            character.horizontalRotation = Mathf.SmoothDampAngle(
+                character.horizontalRotation,
+                character.intendedRotation,
+                ref character.rotationAcceleration,
+                config.rotationDuration
+            );
         }
 
         void ApplyMovement() {

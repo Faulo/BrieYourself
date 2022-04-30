@@ -147,6 +147,12 @@ AnimatorController:
   m_Name: Cheese
   serializedVersion: 5
   m_AnimatorParameters:
+  - m_Name: intendedRotation
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: intendedSpeed
     m_Type: 1
     m_DefaultFloat: 0
@@ -312,6 +318,8 @@ MonoBehaviour:
   dragMultiplier: 2
   applyGravity: 1
   gravityMultiplier: 1
+  applyRotation: 1
+  rotationMultiplier: 1
   applyMovement: 1
   movementMultiplier: 1
 --- !u!1102 &4684717723225006227
@@ -358,6 +366,8 @@ MonoBehaviour:
   dragMultiplier: 1
   applyGravity: 1
   gravityMultiplier: 1
+  applyRotation: 1
+  rotationMultiplier: 1
   applyMovement: 1
   movementMultiplier: 1
 --- !u!114 &6774245933902267075
@@ -376,6 +386,8 @@ MonoBehaviour:
   dragMultiplier: 1.5
   applyGravity: 1
   gravityMultiplier: 1.5
+  applyRotation: 1
+  rotationMultiplier: 1
   applyMovement: 1
   movementMultiplier: 0.75
 --- !u!114 &7979759898248522026

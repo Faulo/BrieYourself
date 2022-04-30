@@ -13,12 +13,22 @@ namespace BrieYourself.Characters {
             cameraInstance = Instantiate(cameraPrefab);
             cameraInstance.LookAt = observedComponent.transform;
             cameraInstance.Follow = observedComponent.transform;
+
+            observedComponent.onProcessInput += TranslateInput;
         }
 
         protected void OnDisable() {
+            observedComponent.onProcessInput -= TranslateInput;
+
             if (cameraInstance) {
                 Destroy(cameraInstance.gameObject);
             }
+        }
+
+        public void TranslateInput(ref Vector2 input) {
+            var forward = cameraInstance.transform.forward * input.y;
+            var right = cameraInstance.transform.right * input.x;
+            input = (forward + right).SwizzleXZ();
         }
     }
 }
