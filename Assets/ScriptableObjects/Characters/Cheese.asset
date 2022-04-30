@@ -15,5 +15,6 @@ MonoBehaviour:
   asset: {fileID: 11400000}
   maximumSpeed: 10
   accelerationDuration: 0.1
-  jumpSpeed: 15
+  jumpSpeed: 10
+  jumpAbortMultiplier: 0.25
   drag: 0.1
