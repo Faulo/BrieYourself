@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2f3f7e88543ca4c868a0d1ac0cd8f4, type: 3}
   m_Name: ACONF_Test
   m_EditorClassIdentifier: 
-  asset: {fileID: 0}
+  asset: {fileID: 11400000}
   outputAudioMixerGroup: {fileID: 0}
   _priorityLevel: 128
   mute: 0
