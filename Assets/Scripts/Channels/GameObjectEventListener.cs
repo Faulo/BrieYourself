@@ -10,12 +10,12 @@ namespace Channels {
         [SerializeField]
         UnityEvent<GameObject> _response;
 
-        void OnEnable() {
-            _gameObjectEventChannel.OnEventRaised += Respond;
+        protected void OnEnable() {
+            _gameObjectEventChannel.eventRaised += Respond;
         }
 
-        void OnDisable() {
-            _gameObjectEventChannel.OnEventRaised -= Respond;   
+        protected void OnDisable() {
+            _gameObjectEventChannel.eventRaised -= Respond;   
         }
 
         void Respond(GameObject obj) {
