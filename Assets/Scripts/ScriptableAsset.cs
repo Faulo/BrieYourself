@@ -2,7 +2,7 @@ using MyBox;
 using UnityEngine;
 
 namespace BrieYourself {
-    public class ScriptableAsset : ScriptableObject {
+    public abstract class ScriptableAsset : ScriptableObject {
         [SerializeField, ReadOnly]
         ScriptableAsset asset = default;
         protected virtual void OnValidate() {
