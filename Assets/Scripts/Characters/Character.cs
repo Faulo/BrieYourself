@@ -23,6 +23,10 @@ namespace BrieYourself.Characters {
 
         }
         protected void FixedUpdate() {
+            if (intentions.TryConsumeJumpStart() && attachedController.isGrounded) {
+                physics.velocity.y += config.jumpSpeed;
+            }
+
             physics.velocity = Vector2.SmoothDamp(
                 physics.velocity.SwizzleXZ(),
                 config.maximumSpeed * intentions.intendedMovement,

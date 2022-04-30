@@ -7,5 +7,7 @@ namespace BrieYourself.Characters {
         public float maximumSpeed = 10;
         [SerializeField, Range(0, 10)]
         public float accelerationDuration = 1;
+        [SerializeField, Range(0, 100)]
+        public float jumpSpeed = 10;
     }
 }
