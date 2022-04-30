@@ -1,57 +1,96 @@
 using Slothsoft.UnityExtensions;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace BrieYourself.Characters {
     public class Character : MonoBehaviour {
         [Header("MonoBehaviour configuration")]
         [SerializeField]
         CharacterController attachedController = default;
-
-        [Header("Character configuration")]
-        [SerializeField, Expandable]
-        CharacterConfig config = default;
-
-        [Header("Runtime fields")]
         [SerializeField]
-        public CharacterIntentions intentions = new();
-        [SerializeField]
-        public CharacterPhysics physics = new();
+        Animator attachedAnimator = default;
 
-        Vector2 movementAcceleration = Vector2.zero;
+        [field: Header("Character configuration")]
+        [field: SerializeField, Expandable]
+        public CharacterConfig config { get; private set; }
 
+        public Vector2 intendedVelocity {
+            get => m_intendedVelocity;
+            set {
+                m_intendedVelocity = value;
+                intendedSpeed = value.magnitude;
+            }
+        }
+        Vector2 m_intendedVelocity;
+        public float intendedSpeed {
+            get => attachedAnimator.GetFloat(nameof(intendedSpeed));
+            private set => attachedAnimator.SetFloat(nameof(intendedSpeed), value);
+        }
+        public bool intendsJump {
+            get => attachedAnimator.GetBool(nameof(intendsJump));
+            set => attachedAnimator.SetBool(nameof(intendsJump), value);
+        }
+
+
+        public bool isGrounded {
+            get => attachedAnimator.GetBool(nameof(isGrounded));
+            private set => attachedAnimator.SetBool(nameof(isGrounded), value);
+        }
+
+        public Vector2 horizontalVelocity {
+            get => m_horizontalVelocity;
+            set {
+                m_horizontalVelocity = value;
+                horizontalSpeed = value.magnitude;
+            }
+        }
+        Vector2 m_horizontalVelocity;
+
+        public float horizontalSpeed {
+            get => attachedAnimator.GetFloat(nameof(horizontalSpeed));
+            private set => attachedAnimator.SetFloat(nameof(horizontalSpeed), value);
+        }
+
+        public float verticalSpeed {
+            get => attachedAnimator.GetFloat(nameof(verticalSpeed));
+            private set => attachedAnimator.SetFloat(nameof(verticalSpeed), value);
+        }
+
+        public Vector3 velocity {
+            get => horizontalVelocity.SwizzleXZ().WithY(verticalSpeed);
+            set {
+                horizontalVelocity = value.SwizzleXZ();
+                verticalSpeed = value.y;
+            }
+        }
+
+        public Vector2 movementAcceleration = Vector2.zero;
+
+        protected void OnValidate() {
+            if (!attachedAnimator) {
+                TryGetComponent(out attachedAnimator);
+            }
+            if (!attachedController) {
+                TryGetComponent(out attachedController);
+            }
+        }
         protected void Start() {
-
+            Assert.IsTrue(config);
         }
         protected void FixedUpdate() {
-            ApplyDrag();
-            ApplyGravity();
-            ApplyJump();
-            ApplyMovement();
+            attachedController.Move(velocity * Time.deltaTime);
 
-            attachedController.Move(physics.velocity * Time.deltaTime);
+            isGrounded = attachedController.isGrounded;
 
             if (attachedController.isGrounded) {
-                physics.velocity.y = 0;
+                verticalSpeed = 0;
             }
         }
-        void ApplyJump() {
-            if (intentions.TryConsumeJumpStart() && attachedController.isGrounded) {
-                physics.velocity.y += config.jumpSpeed;
-            }
+        public void StartJumping() {
+            verticalSpeed = config.jumpSpeed;
         }
-        void ApplyGravity() {
-            physics.velocity += Physics.gravity * Time.deltaTime;
-        }
-        void ApplyMovement() {
-            physics.velocity = Vector2.SmoothDamp(
-                physics.velocity.SwizzleXZ(),
-                config.maximumSpeed * intentions.intendedMovement,
-                ref movementAcceleration,
-                config.accelerationDuration
-            ).SwizzleXZ().WithY(physics.velocity.y);
-        }
-        void ApplyDrag() {
-            physics.velocity -= config.drag * Time.deltaTime * physics.velocity.sqrMagnitude * physics.velocity.normalized;
+        public void StopJumping() {
+            verticalSpeed *= config.jumpAbortMultiplier;
         }
     }
 }
