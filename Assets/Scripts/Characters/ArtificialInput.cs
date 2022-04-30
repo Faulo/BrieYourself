@@ -16,7 +16,7 @@ namespace BrieYourself
         { 
             DetectHostiles();
         }
-
+        
         void DetectHostiles()
         {
             var hits = Physics.SphereCastAll(this.transform.position, _hostileDetectionRadius,
@@ -36,10 +36,8 @@ namespace BrieYourself
                 _attachedAnimator.SetFloat("closestHostileDistance", closestHostileDistance);
             }
         }
-        protected void OnValidate() 
-        {
-            if (!_attachedAnimator) 
-            {
+        protected void OnValidate() {
+            if (!_attachedAnimator) {
                 TryGetComponent(out _attachedAnimator);
             }
         }
