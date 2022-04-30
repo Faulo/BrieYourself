@@ -49,6 +49,19 @@ namespace BrieYourself.Audio
         {
             return _audioSource.loop;
         }
+
+        public bool IsPlaying() {
+            return _audioSource.isPlaying;
+        }
+
+        public void SetVolume(float volume) {
+            _audioSource.volume = (Mathf.Clamp(volume, 0f, 1f));
+        }
+
+        public float GetVolume() {
+            return _audioSource.volume;
+        }
+        
         private IEnumerator FinishedPlayingEnumerator(float clipLength)
         {
             yield return new WaitForSeconds(clipLength);
