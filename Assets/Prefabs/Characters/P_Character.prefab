@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 6857514407753797268}
   - component: {fileID: 6857514407753797259}
   - component: {fileID: 6857514407753797261}
+  - component: {fileID: 5288070387145681696}
   m_Layer: 0
   m_Name: P_Character
   m_TagString: Untagged
@@ -83,6 +84,8 @@ MonoBehaviour:
   <config>k__BackingField: {fileID: 11400000, guid: d599a50a88c06324bac445534bace74f,
     type: 2}
   movementAcceleration: {x: 0, y: 0}
+  rotationAcceleration: 0
+  intendedLook: {x: 0, y: 0}
 --- !u!143 &6857514407753797259
 CharacterController:
   m_ObjectHideFlags: 0
@@ -121,3 +124,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &5288070387145681696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857514407753797269}
+  m_Material: {fileID: 13400000, guid: b509f2057661ae0439933d81384d1e7a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

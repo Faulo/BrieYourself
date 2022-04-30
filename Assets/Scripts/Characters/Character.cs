@@ -7,7 +7,7 @@ namespace BrieYourself.Characters {
     public class Character : MonoBehaviour {
         [Header("MonoBehaviour configuration")]
         [SerializeField]
-        CharacterController attachedController = default;
+        public CharacterController attachedController = default;
         [SerializeField]
         Animator attachedAnimator = default;
 
@@ -127,12 +127,14 @@ namespace BrieYourself.Characters {
             Assert.IsTrue(config);
         }
         protected void FixedUpdate() {
-            attachedController.Move(velocity * Time.deltaTime);
+            if (attachedController.enabled) {
+                attachedController.Move(velocity * Time.deltaTime);
 
-            isGrounded = attachedController.isGrounded;
+                isGrounded = attachedController.isGrounded;
 
-            if (attachedController.isGrounded) {
-                verticalSpeed = Physics.gravity.y * Time.deltaTime;
+                if (attachedController.isGrounded) {
+                    verticalSpeed = Physics.gravity.y * Time.deltaTime;
+                }
             }
         }
         public void StartJumping() {

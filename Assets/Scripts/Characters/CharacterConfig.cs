@@ -11,7 +11,7 @@ namespace BrieYourself.Characters {
         public float accelerationDuration = 1;
         [SerializeField, Range(0, 10)]
         public float rotationDuration = 1;
-        
+
         [Space]
         [SerializeField, Range(0, 100)]
         public float jumpSpeed = 10;
