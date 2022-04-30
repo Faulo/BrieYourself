@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 6857514407753797256}
   - component: {fileID: 6857514407753797268}
   - component: {fileID: 6857514407753797259}
-  - component: {fileID: 6857514407753797261}
   - component: {fileID: 5288070387145681696}
   m_Layer: 0
   m_Name: P_Character
@@ -80,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachedController: {fileID: 6857514407753797259}
-  attachedAnimator: {fileID: 6857514407753797261}
+  attachedAnimator: {fileID: 0}
   <config>k__BackingField: {fileID: 11400000, guid: d599a50a88c06324bac445534bace74f,
     type: 2}
   movementAcceleration: {x: 0, y: 0}
@@ -104,26 +103,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &6857514407753797261
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6857514407753797269}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3d326924d1be69b4a9c057a1df842969, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &5288070387145681696
 BoxCollider:
   m_ObjectHideFlags: 0

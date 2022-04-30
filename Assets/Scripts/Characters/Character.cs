@@ -117,7 +117,7 @@ namespace BrieYourself.Characters {
 
         protected void OnValidate() {
             if (!attachedAnimator) {
-                TryGetComponent(out attachedAnimator);
+                transform.TryGetComponentInChildren(out attachedAnimator);
             }
             if (!attachedController) {
                 TryGetComponent(out attachedController);

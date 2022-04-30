@@ -16,6 +16,6 @@ MonoBehaviour:
   maximumSpeed: 10
   accelerationDuration: 0.1
   rotationDuration: 0.3
-  jumpSpeed: 10
+  jumpSpeed: 67
   jumpAbortMultiplier: 0.25
   drag: 0.1

@@ -9,7 +9,7 @@ namespace BrieYourself.Characters.StateMachines {
 
         public sealed override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
             this.animator = animator;
-            character = animator.GetComponent<Character>();
+            character = animator.GetComponentInParent<Character>();
             Assert.IsTrue(character, $"Animator {animator} does not have a {typeof(Character)} component!");
 
             config = character.config;
