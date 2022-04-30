@@ -1,9 +1,8 @@
-using System;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Channels {
+namespace BrieYourself.Channels {
     public class GameObjectEventListener : MonoBehaviour {
         [SerializeField, Expandable()] 
         GameObjectEventChannel _gameObjectEventChannel;
