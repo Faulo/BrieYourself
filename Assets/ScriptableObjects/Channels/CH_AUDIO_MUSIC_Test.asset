@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98ffb09266b0c9743b41aa2068785f14, type: 3}
-  m_Name: New Character Config
+  m_Script: {fileID: 11500000, guid: bbc5e95a4f15c2d42adfef5745ef7e27, type: 3}
+  m_Name: CH_AUDIO_MUSIC_Test
   m_EditorClassIdentifier: 
-  asset: {fileID: 11400000}
-  maximumSpeed: 10
-  accelerationDuration: 0.1
-  jumpSpeed: 15
-  drag: 0.1

@@ -9,6 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece4e35d3c6f46b58707c7d03f73b7bc, type: 3}
-  m_Name: CH_Test_GameObjectEventChannel
+  m_Script: {fileID: 11500000, guid: e50dfcadd48bb444595df4083ebe996d, type: 3}
+  m_Name: ACUE_Test
   m_EditorClassIdentifier: 
+  asset: {fileID: 11400000}
+  looping: 0
+  _audioClipGroup:
+  - mode: 2
+    clips:
+    - {fileID: 8300000, guid: 0136470e47759c44caf7ea5c23144459, type: 3}
