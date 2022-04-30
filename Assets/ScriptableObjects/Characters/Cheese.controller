@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7345768119158828162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c8187f6406496458700275838341f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: {x: 2, y: 0.2, z: 2}
+--- !u!1101 &-5974779197985136348
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: intendsInteract
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 601160021112667210}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-4765090741505442266
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: intendsInteract
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -1279955371552593027}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-4436548792970576793
 AnimatorState:
   serializedVersion: 6
@@ -69,6 +132,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -3572910824017447341}
   - {fileID: 103491528310753895}
+  - {fileID: -5974779197985136348}
   m_StateMachineBehaviours:
   - {fileID: 4108591004567406310}
   m_Position: {x: 50, y: 50, z: 0}
@@ -128,6 +192,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 4684717723225006227}
     m_Position: {x: 580, y: 190, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 601160021112667210}
+    m_Position: {x: 692.7643, y: 56.906593, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -189,6 +256,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: intendsInteract
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: intendsInteractStart
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -227,6 +306,55 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &601160021112667210
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Squish
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -4765090741505442266}
+  m_StateMachineBehaviours:
+  - {fileID: 1552688110836930961}
+  - {fileID: -7345768119158828162}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 0}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!114 &1552688110836930961
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33fd698e5532716469c8bffc9e887d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applyDrag: 1
+  dragMultiplier: 1
+  applyGravity: 1
+  gravityMultiplier: 0.25
+  applyRotation: 1
+  applyMovement: 1
+  movementSpeedMultiplier: 1
+  movementDurationMultiplier: 1
 --- !u!1101 &1992052370278846623
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -319,9 +447,9 @@ MonoBehaviour:
   applyGravity: 1
   gravityMultiplier: 1
   applyRotation: 1
-  rotationMultiplier: 1
   applyMovement: 1
-  movementMultiplier: 1
+  movementSpeedMultiplier: 1
+  movementDurationMultiplier: 1
 --- !u!1102 &4684717723225006227
 AnimatorState:
   serializedVersion: 6
@@ -367,9 +495,9 @@ MonoBehaviour:
   applyGravity: 1
   gravityMultiplier: 1
   applyRotation: 1
-  rotationMultiplier: 1
   applyMovement: 1
-  movementMultiplier: 1
+  movementSpeedMultiplier: 1
+  movementDurationMultiplier: 2
 --- !u!114 &6774245933902267075
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,9 +515,9 @@ MonoBehaviour:
   applyGravity: 1
   gravityMultiplier: 1.5
   applyRotation: 1
-  rotationMultiplier: 1
   applyMovement: 1
-  movementMultiplier: 0.75
+  movementSpeedMultiplier: 1
+  movementDurationMultiplier: 4
 --- !u!114 &7979759898248522026
 MonoBehaviour:
   m_ObjectHideFlags: 1

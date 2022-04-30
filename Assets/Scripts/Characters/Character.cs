@@ -47,6 +47,19 @@ namespace BrieYourself.Characters {
             get => attachedAnimator.GetBool(nameof(intendsJumpStart));
             set => attachedAnimator.SetBool(nameof(intendsJumpStart), value);
         }
+        public bool intendsInteract {
+            get => attachedAnimator.GetBool(nameof(intendsInteract));
+            set {
+                if (!intendsInteract && value) {
+                    intendsInteractStart = true;
+                }
+                attachedAnimator.SetBool(nameof(intendsInteract), value);
+            }
+        }
+        public bool intendsInteractStart {
+            get => attachedAnimator.GetBool(nameof(intendsInteractStart));
+            set => attachedAnimator.SetBool(nameof(intendsInteractStart), value);
+        }
 
         public bool isGrounded {
             get => attachedAnimator.GetBool(nameof(isGrounded));
