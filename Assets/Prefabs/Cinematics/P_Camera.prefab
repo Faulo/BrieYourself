@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6672371171957496108}
   - component: {fileID: 6408179344455755654}
   - component: {fileID: 1790491144188065081}
+  - component: {fileID: 2013931322075346984}
   m_Layer: 0
   m_Name: P_Camera
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.4345992, y: 1}
+    m_SensorSize: {x: 2.2364342, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -95,13 +96,27 @@ MonoBehaviour:
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_MinimumOcclusionTime: 0
-  m_CameraRadius: 0.1
-  m_Strategy: 2
+  m_CameraRadius: 0.25
+  m_Strategy: 0
   m_MaximumEffort: 4
-  m_SmoothingTime: 0.1
+  m_SmoothingTime: 0.2
   m_Damping: 0.1
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
+  m_OptimalTargetDistance: 10
+--- !u!114 &2013931322075346984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504280298234335217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c10872f9f2c514f90a5323cf4e5e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useXAxis: 1
+  useYAxis: 1
 --- !u!1 &3781331979691394075
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
+  m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 3, z: -15}
   m_XDamping: 1
   m_YDamping: 1
@@ -184,7 +199,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 200
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: 

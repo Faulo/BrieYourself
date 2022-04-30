@@ -28,6 +28,7 @@ namespace BrieYourself.Characters {
         public void OnInteract(InputAction.CallbackContext context) {
         }
         public void OnStickLook(InputAction.CallbackContext context) {
+            observedComponent.intendedLook = context.ReadValue<Vector2>();
         }
         public void OnMouseLook(InputAction.CallbackContext context) {
         }
