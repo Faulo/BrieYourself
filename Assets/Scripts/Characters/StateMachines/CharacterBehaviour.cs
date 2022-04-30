@@ -18,7 +18,9 @@ namespace BrieYourself.Characters.StateMachines {
         protected abstract void StateEnter(in AnimatorStateInfo stateInfo, int layerIndex);
 
         public sealed override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-            StateUpdate(stateInfo, layerIndex);
+            if (animator.GetCurrentAnimatorStateInfo(layerIndex).fullPathHash == stateInfo.fullPathHash) {
+                StateUpdate(stateInfo, layerIndex);
+            }
         }
         protected abstract void StateUpdate(in AnimatorStateInfo stateInfo, int layerIndex);
 
