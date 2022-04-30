@@ -1,3 +1,4 @@
+using MyBox;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -15,10 +16,17 @@ namespace BrieYourself.Characters {
         public CharacterConfig config { get; private set; }
 
         public Vector2 intendedVelocity {
-            get => m_intendedVelocity;
+            get {
+                var velocity = m_intendedVelocity;
+                onProcessInput?.Invoke(ref velocity);
+                return velocity;
+            }
             set {
                 m_intendedVelocity = value;
                 intendedSpeed = value.magnitude;
+                if (value != Vector2.zero) {
+                    intendedRotation = Quaternion.LookRotation(intendedVelocity.SwizzleXZ()).eulerAngles.y;
+                }
             }
         }
         Vector2 m_intendedVelocity;
@@ -73,9 +81,25 @@ namespace BrieYourself.Characters {
             }
         }
 
+        public float horizontalRotation {
+            get => transform.eulerAngles.y;
+            set => transform.eulerAngles = transform.eulerAngles.WithY(value);
+        }
+
+        public float intendedRotation {
+            get => attachedAnimator.GetFloat(nameof(intendedRotation));
+            private set => attachedAnimator.SetFloat(nameof(intendedRotation), value);
+        }
+
         [Header("Runtime fields")]
-        [SerializeField]
+        [SerializeField, ReadOnly]
         public Vector2 movementAcceleration = Vector2.zero;
+        [SerializeField, ReadOnly]
+        public float rotationAcceleration = 0;
+
+        public event InputProcessor onProcessInput;
+
+        public delegate void InputProcessor(ref Vector2 velocity);
 
         protected void OnValidate() {
             if (!attachedAnimator) {
