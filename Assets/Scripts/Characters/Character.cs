@@ -23,24 +23,35 @@ namespace BrieYourself.Characters {
 
         }
         protected void FixedUpdate() {
-            if (intentions.TryConsumeJumpStart() && attachedController.isGrounded) {
-                physics.velocity.y += config.jumpSpeed;
-            }
-
-            physics.velocity = Vector2.SmoothDamp(
-                physics.velocity.SwizzleXZ(),
-                config.maximumSpeed * intentions.intendedMovement,
-                ref movementAcceleration,
-                config.accelerationDuration
-            ).SwizzleXZ().WithY(physics.velocity.y);
-
-            physics.velocity += Physics.gravity * Time.deltaTime;
+            ApplyDrag();
+            ApplyGravity();
+            ApplyJump();
+            ApplyMovement();
 
             attachedController.Move(physics.velocity * Time.deltaTime);
 
             if (attachedController.isGrounded) {
                 physics.velocity.y = 0;
             }
+        }
+        void ApplyJump() {
+            if (intentions.TryConsumeJumpStart() && attachedController.isGrounded) {
+                physics.velocity.y += config.jumpSpeed;
+            }
+        }
+        void ApplyGravity() {
+            physics.velocity += Physics.gravity * Time.deltaTime;
+        }
+        void ApplyMovement() {
+            physics.velocity = Vector2.SmoothDamp(
+                physics.velocity.SwizzleXZ(),
+                config.maximumSpeed * intentions.intendedMovement,
+                ref movementAcceleration,
+                config.accelerationDuration
+            ).SwizzleXZ().WithY(physics.velocity.y);
+        }
+        void ApplyDrag() {
+            physics.velocity -= config.drag * Time.deltaTime * physics.velocity.sqrMagnitude * physics.velocity.normalized;
         }
     }
 }
