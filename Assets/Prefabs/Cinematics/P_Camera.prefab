@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6672371171957496108}
   - component: {fileID: 6408179344455755654}
+  - component: {fileID: 1790491144188065081}
+  - component: {fileID: 2013931322075346984}
   m_Layer: 0
   m_Name: P_Camera
   m_TagString: Untagged
@@ -62,7 +64,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.4345992, y: 1}
+    m_SensorSize: {x: 2.2364342, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -71,6 +73,50 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1763212568825405219}
+--- !u!114 &1790491144188065081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504280298234335217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.25
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0.2
+  m_Damping: 0.1
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 10
+--- !u!114 &2013931322075346984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504280298234335217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c10872f9f2c514f90a5323cf4e5e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useXAxis: 1
+  useYAxis: 1
 --- !u!1 &3781331979691394075
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,8 +128,8 @@ GameObject:
   - component: {fileID: 1763212568825405219}
   - component: {fileID: 4016868928639592370}
   - component: {fileID: 6414934474636015804}
-  - component: {fileID: 8026534981193556205}
   - component: {fileID: 1243734922772527902}
+  - component: {fileID: 467893886476985446}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -130,14 +176,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
+  m_BindingMode: 5
   m_FollowOffset: {x: 0, y: 3, z: -15}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
-  m_YawDamping: 0
+  m_YawDamping: 20
   m_RollDamping: 0
   m_AngularDamping: 0
   m_Heading:
@@ -153,7 +199,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 200
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: 
@@ -172,18 +218,6 @@ MonoBehaviour:
   m_LegacyHeightOffset: 3.4028235e+38
   m_LegacyHeadingBias: 3.4028235e+38
   m_HeadingIsSlave: 0
---- !u!114 &8026534981193556205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3781331979691394075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1243734922772527902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +235,15 @@ MonoBehaviour:
   m_AmplitudeGain: 0
   m_FrequencyGain: 0
   mNoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &467893886476985446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3781331979691394075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -16,20 +16,34 @@ namespace BrieYourself.Characters.StateMachines {
 
         [Space]
         [SerializeField]
+        bool applyRotation = true;
+
+        [Space]
+        [SerializeField]
         bool applyMovement = true;
         [SerializeField, ConditionalField(nameof(applyMovement))]
-        float movementMultiplier = 1;
+        float movementSpeedMultiplier = 1;
+        [SerializeField, ConditionalField(nameof(applyMovement))]
+        float movementDurationMultiplier = 1;
 
-        public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+
+        protected override void StateEnter(in AnimatorStateInfo stateInfo, int layerIndex) {
+        }
+        protected override void StateUpdate(in AnimatorStateInfo stateInfo, int layerIndex) {
             if (applyDrag) {
                 ApplyDrag();
             }
             if (applyGravity) {
                 ApplyGravity();
             }
+            if (applyRotation) {
+                ApplyRotation();
+            }
             if (applyMovement) {
                 ApplyMovement();
             }
+        }
+        protected override void StateExit(in AnimatorStateInfo stateInfo, int layerIndex) {
         }
 
         void ApplyDrag() {
@@ -40,12 +54,21 @@ namespace BrieYourself.Characters.StateMachines {
             character.velocity += gravityMultiplier * Time.deltaTime * Physics.gravity;
         }
 
+        void ApplyRotation() {
+            character.horizontalRotation = Mathf.SmoothDampAngle(
+                character.horizontalRotation,
+                character.intendedRotation,
+                ref character.rotationAcceleration,
+                config.rotationDuration
+            );
+        }
+
         void ApplyMovement() {
             character.horizontalVelocity = Vector2.SmoothDamp(
                 character.horizontalVelocity,
-                movementMultiplier * config.maximumSpeed * character.intendedVelocity,
+                movementSpeedMultiplier * config.maximumSpeed * character.intendedVelocity,
                 ref character.movementAcceleration,
-                config.accelerationDuration
+                movementDurationMultiplier * config.accelerationDuration
             );
         }
     }
