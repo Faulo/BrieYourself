@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ffb09266b0c9743b41aa2068785f14, type: 3}
   m_Name: New Character Config
   m_EditorClassIdentifier: 
-  asset: {fileID: 0}
+  asset: {fileID: 11400000}
   maximumSpeed: 10
-  accelerationDuration: 1
+  accelerationDuration: 0.1
+  jumpSpeed: 15
+  drag: 0.1
