@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
-{
+public class MainMenu : MonoBehaviour {
     [SerializeField]
     int sceneToLoadBuildIndex;
     [SerializeField]
@@ -14,32 +11,28 @@ public class MainMenu : MonoBehaviour
     GameObject buttons;
     [SerializeField]
     Button ButtonHighlightedOnStart;
- 
-   
+
+
     // Start is called before the first frame update
-    void Start()
-    {
-     
+    void Start() {
+
     }
 
-    private void OnEnable() {
+    void OnEnable() {
         ButtonHighlightedOnStart.Select(); //Force unity to select the button which will then highlight it
     }
 
-    public void PlayCredits() 
-    {
+    public void PlayCredits() {
         Debug.Log("Credits Start");
         UIElements.GetComponent<Animation>().Play();
     }
 
-    public void StartGame() 
-    {
+    public void StartGame() {
         Debug.Log("Start Game Please");
         SceneManager.LoadScene(sceneToLoadBuildIndex);
     }
 
-    public void CloseGame() 
-    {
+    public void CloseGame() {
         Debug.Log("CLOSE THE GAME!!!!");
         Application.Quit();
     }
