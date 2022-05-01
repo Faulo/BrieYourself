@@ -17,4 +17,4 @@ MonoBehaviour:
   _audioClipGroup:
   - mode: 2
     clips:
-    - {fileID: 8300000, guid: c4ec5c38b18ff7c48ae7b4cc5451a775, type: 3}
+    - {fileID: 8300000, guid: b36b38f8305ff86499952f2171151b3c, type: 3}
