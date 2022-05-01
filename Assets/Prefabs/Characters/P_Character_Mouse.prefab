@@ -85,9 +85,9 @@ Animator:
   m_GameObject: {fileID: 1401816347665129851}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3d326924d1be69b4a9c057a1df842969, type: 2}
+  m_Controller: {fileID: 9100000, guid: 234f16e61d2bd524d8f1f270c300f23f, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -237,6 +237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Character_Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857514407753797269, guid: f01071ab9da16e04295510f743030578,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01071ab9da16e04295510f743030578, type: 3}

@@ -17,7 +17,7 @@ MonoBehaviour:
   stepDuration: 0.2
   accelerationDuration: 0.1
   rotationDuration: 0.3
-  jumpSpeed: 28.4
+  jumpSpeed: 10
   jumpAbortMultiplier: 0.25
   drag: 0.1
   capsuleRadius: 0.75

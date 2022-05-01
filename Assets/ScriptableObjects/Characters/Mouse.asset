@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: Mouse
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
-  maximumSpeed: 10
-  stepDuration: 0.2
+  maximumSpeed: 20
+  stepDuration: 0.3
   accelerationDuration: 0.1
   rotationDuration: 0.3
-  jumpSpeed: 28.4
+  jumpSpeed: 30
   jumpAbortMultiplier: 0.25
   drag: 0.1
-  defaultBoxSize: {x: 6, y: 7.5, z: 6}
-  squishBoxSize: {x: 6, y: 7.5, z: 6}
+  capsuleRadius: 3
+  capsuleHeight: 8
+  capsuleOffset: 4.25
+  feetHeight: 1.5
+  defaultBoxSize: {x: 6, y: 6, z: 6}
+  squishBoxSize: {x: 6, y: 6, z: 6}
