@@ -69,6 +69,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e1f183637ca124eb3b5325ee4fb62e, type: 3}
+--- !u!114 &7468140678811433312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9015041029993838845, guid: 65e1f183637ca124eb3b5325ee4fb62e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1927530112231244189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c41c5d910605c498fd873e8e52fd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7468140678811433340 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9015041029993838817, guid: 65e1f183637ca124eb3b5325ee4fb62e,
@@ -141,6 +153,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611341959914997187, guid: 932038b45a52ce44c835b444c044bc50,
+        type: 3}
+      propertyPath: observedComponent
+      value: 
+      objectReference: {fileID: 7468140678811433312}
+    - target: {fileID: 8611341959914997187, guid: 932038b45a52ce44c835b444c044bc50,
+        type: 3}
+      propertyPath: _whatIsPrey.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611341959914997187, guid: 932038b45a52ce44c835b444c044bc50,
+        type: 3}
+      propertyPath: _preyDetectionRadius
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 932038b45a52ce44c835b444c044bc50, type: 3}

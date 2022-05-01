@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -40,7 +38,7 @@ namespace BrieYourself.Characters {
                 }
             }
             if (closestHostile) {
-                float closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, closestPrey.position));
+                float closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, closestHostile.position));
                 _attachedAnimator.SetFloat("closestHostileDistance", closestHostileDistance);
             } else {
                 _attachedAnimator.SetFloat("closestHostileDistance", Mathf.Infinity);
