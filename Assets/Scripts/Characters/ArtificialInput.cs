@@ -52,6 +52,7 @@ namespace BrieYourself.Characters {
         }
 
         protected override void OnValidate() {
+            base.OnValidate();
             if (!_attachedAnimator) {
                 TryGetComponent(out _attachedAnimator);
             }
