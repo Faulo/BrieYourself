@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mouse
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
+  layer: 7
   maximumSpeed: 20
   stepDuration: 0.3
   accelerationDuration: 0.1

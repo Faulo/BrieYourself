@@ -163,11 +163,7 @@ namespace BrieYourself.Characters {
             }
         }
         protected void Start() {
-            Assert.IsTrue(config);
-            boxSize = config.defaultBoxSize;
-            attachedController.radius = config.capsuleRadius;
-            attachedController.height = config.capsuleHeight;
-            attachedController.center = Vector3.up * config.capsuleOffset;
+            ApplyConfig();
         }
         float stepTimer;
         protected void FixedUpdate() {
@@ -202,6 +198,20 @@ namespace BrieYourself.Characters {
             obj.transform.parent = attachedHead;
             obj.transform.localPosition = Vector3.zero;
             obj.transform.localRotation = Quaternion.identity;
+        }
+
+        public void SetConfig(CharacterConfig config) {
+            this.config = config;
+            ApplyConfig();
+        }
+
+        void ApplyConfig() {
+            Assert.IsTrue(config);
+            boxSize = config.defaultBoxSize;
+            attachedController.radius = config.capsuleRadius;
+            attachedController.height = config.capsuleHeight;
+            attachedController.center = Vector3.up * config.capsuleOffset;
+            gameObject.layer = config.layer;
         }
     }
 }

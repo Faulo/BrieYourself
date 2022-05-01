@@ -1,8 +1,12 @@
+using Slothsoft.UnityExtensions;
 using UnityEngine;
 
 namespace BrieYourself.Characters {
     [CreateAssetMenu]
     public class CharacterConfig : ScriptableAsset {
+        [SerializeField, Layer]
+        public int layer = 0;
+
         [SerializeField, Range(0, 100)]
         public float maximumSpeed = 10;
         [SerializeField, Range(0, 10)]

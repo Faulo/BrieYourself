@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98ffb09266b0c9743b41aa2068785f14, type: 3}
-  m_Name: Cheese
+  m_Name: CheeseMouse
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
-  layer: 6
-  maximumSpeed: 10
+  layer: 7
+  maximumSpeed: 15
   stepDuration: 0.2
   accelerationDuration: 0.1
   rotationDuration: 0.3
-  jumpSpeed: 10
+  jumpSpeed: 20
   jumpAbortMultiplier: 0.25
   drag: 0.1
   capsuleRadius: 0.75
