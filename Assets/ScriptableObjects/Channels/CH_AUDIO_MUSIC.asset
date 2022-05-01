@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbc5e95a4f15c2d42adfef5745ef7e27, type: 3}
-  m_Name: CH_AUDIO_MUSIC_Test
+  m_Name: CH_AUDIO_MUSIC
   m_EditorClassIdentifier: 

@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioCue: {fileID: 11400000, guid: 6e02976c80b5a4145b9ffd01f86e1e63, type: 2}
-  audioConfig: {fileID: 11400000, guid: d22db579289b8bf4abe485927e65d452, type: 2}
+  audioConfig: {fileID: 11400000, guid: a3b88cf8442c2f54db4c474652ab20d8, type: 2}
   audioChannel: {fileID: 11400000, guid: 06cdb8630386f554ca042e7c29535f43, type: 2}
   playOnEnter: 1
   playOnUpdate: 0
