@@ -9,16 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98ffb09266b0c9743b41aa2068785f14, type: 3}
-  m_Name: Cheese
+  m_Script: {fileID: 11500000, guid: e50dfcadd48bb444595df4083ebe996d, type: 3}
+  m_Name: ACUE_Cheese_Unused
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
-  maximumSpeed: 10
-  stepDuration: 0.2
-  accelerationDuration: 0.1
-  rotationDuration: 0.3
-  jumpSpeed: 10
-  jumpAbortMultiplier: 0.25
-  drag: 0.1
-  defaultBoxSize: {x: 1.5, y: 2.5, z: 1.5}
-  squishBoxSize: {x: 4, y: 0.25, z: 4}
+  looping: 0
+  _audioClipGroup:
+  - mode: 1
+    clips: []

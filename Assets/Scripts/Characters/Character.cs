@@ -1,7 +1,9 @@
+using System;
 using MyBox;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
 
 namespace BrieYourself.Characters {
     public class Character : MonoBehaviour {
@@ -65,7 +67,18 @@ namespace BrieYourself.Characters {
 
         public bool isGrounded {
             get => attachedAnimator.GetBool(nameof(isGrounded));
-            private set => attachedAnimator.SetBool(nameof(isGrounded), value);
+            private set {
+                bool wasGrounded = isGrounded;
+                if (wasGrounded != value) {
+                    if (wasGrounded) {
+                        onBecomeAirborne.Invoke(gameObject);
+                    }
+                    attachedAnimator.SetBool(nameof(isGrounded), value);
+                    if (value) {
+                        onBecomeGrounded.Invoke(gameObject);
+                    }
+                }
+            }
         }
 
         public Vector2 horizontalVelocity {
@@ -105,6 +118,14 @@ namespace BrieYourself.Characters {
             private set => attachedAnimator.SetFloat(nameof(intendedRotation), value);
         }
 
+        [Header("Events")]
+        [SerializeField]
+        UnityEvent<GameObject> onBecomeGrounded = new UnityEvent<GameObject>();
+        [SerializeField]
+        UnityEvent<GameObject> onBecomeAirborne = new UnityEvent<GameObject>();
+        [SerializeField]
+        UnityEvent<GameObject> onStep = new UnityEvent<GameObject>();
+
         [Header("Runtime fields")]
         [SerializeField, ReadOnly]
         public Vector2 movementAcceleration = Vector2.zero;
@@ -139,9 +160,18 @@ namespace BrieYourself.Characters {
         protected void Start() {
             Assert.IsTrue(config);
         }
+        float stepTimer;
         protected void FixedUpdate() {
             if (attachedController.enabled) {
                 attachedController.Move(velocity * Time.deltaTime);
+
+                if (horizontalSpeed > 1) {
+                    stepTimer += Time.deltaTime;
+                    if (stepTimer > config.stepDuration) {
+                        stepTimer = 0;
+                        onStep.Invoke(gameObject);
+                    }
+                }
 
                 isGrounded = attachedController.isGrounded;
 
@@ -149,12 +179,6 @@ namespace BrieYourself.Characters {
                     verticalSpeed = Physics.gravity.y * Time.deltaTime;
                 }
             }
-        }
-        public void StartJumping() {
-            verticalSpeed = config.jumpSpeed;
-        }
-        public void StopJumping() {
-            verticalSpeed *= config.jumpAbortMultiplier;
         }
     }
 }

@@ -5,6 +5,8 @@ namespace BrieYourself.Characters {
     public class CharacterConfig : ScriptableAsset {
         [SerializeField, Range(0, 100)]
         public float maximumSpeed = 10;
+        [SerializeField, Range(0, 10)]
+        public float stepDuration = 1;
 
         [Space]
         [SerializeField, Range(0, 10)]

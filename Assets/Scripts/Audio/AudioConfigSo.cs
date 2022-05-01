@@ -49,9 +49,9 @@ namespace BrieYourself.Audio {
         [SerializeField]
         AudioRolloffMode rolloffMode = AudioRolloffMode.Logarithmic;
         [SerializeField]
-        float minDistance = 0.1f;
+        float minDistance = 1;
         [SerializeField]
-        float maxDistance = 50f;
+        float maxDistance = 500;
 
         [Header("Ignores")]
         public bool bypassEffects = false;
