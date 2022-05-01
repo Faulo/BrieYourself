@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50dfcadd48bb444595df4083ebe996d, type: 3}
+  m_Name: ACUE_Cheese_Hurt
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000}
+  looping: 0
+  _audioClipGroup:
+  - mode: 1
+    clips:
+    - {fileID: 8300000, guid: b4e3c7e97fe5c8941b23505461d08694, type: 3}
+    - {fileID: 8300000, guid: 67cdc82982efe6a4e976c2e889ac733d, type: 3}
+    - {fileID: 8300000, guid: 637c4808f9d457e4e958a00604e965d8, type: 3}
+    - {fileID: 8300000, guid: 3d088245a86a98f408bdccd4c3d4b3b8, type: 3}

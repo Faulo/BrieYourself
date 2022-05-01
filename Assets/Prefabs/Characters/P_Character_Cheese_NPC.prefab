@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf32bc976fe1d9e4da0dcd33f41f8078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hostileDetectionRadius: 0
+  observedComponent: {fileID: 0}
+  _hostileDetectionRadius: 20
   _whatIsHostile:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   _attachedAnimator: {fileID: 7147738361165968641}
 --- !u!95 &7147738361165968641
 Animator:
@@ -95,17 +96,17 @@ PrefabInstance:
     - target: {fileID: 9015041029993838817, guid: f30093ab73d5b1a42833cc4226e8ccf9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 46.938168
       objectReference: {fileID: 0}
     - target: {fileID: 9015041029993838817, guid: f30093ab73d5b1a42833cc4226e8ccf9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 9015041029993838817, guid: f30093ab73d5b1a42833cc4226e8ccf9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 20.68
       objectReference: {fileID: 0}
     - target: {fileID: 9015041029993838817, guid: f30093ab73d5b1a42833cc4226e8ccf9,
         type: 3}

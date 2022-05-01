@@ -5,6 +5,8 @@ namespace BrieYourself.Characters {
     public class CharacterConfig : ScriptableAsset {
         [SerializeField, Range(0, 100)]
         public float maximumSpeed = 10;
+        [SerializeField, Range(0, 10)]
+        public float stepDuration = 1;
 
         [Space]
         [SerializeField, Range(0, 10)]
@@ -22,6 +24,15 @@ namespace BrieYourself.Characters {
         [SerializeField, Range(0, 100)]
         public float drag = 1;
 
+        [Header("Volume")]
+        [SerializeField]
+        public float capsuleRadius = 1;
+        [SerializeField]
+        public float capsuleHeight = 1;
+        [SerializeField]
+        public float capsuleOffset = 1;
+        [SerializeField]
+        public float feetHeight = 0;
         [SerializeField]
         public Vector3 defaultBoxSize = Vector3.one;
         [SerializeField]

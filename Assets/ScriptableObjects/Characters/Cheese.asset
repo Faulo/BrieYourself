@@ -14,10 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
   maximumSpeed: 10
+  stepDuration: 0.2
   accelerationDuration: 0.1
   rotationDuration: 0.3
   jumpSpeed: 10
   jumpAbortMultiplier: 0.25
   drag: 0.1
-  defaultBoxSize: {x: 1.5, y: 2.5, z: 1.5}
-  squishBoxSize: {x: 4, y: 0.25, z: 4}
+  capsuleRadius: 0.75
+  capsuleHeight: 1.8
+  capsuleOffset: 1.2
+  feetHeight: 0.65
+  defaultBoxSize: {x: 1.5, y: 1.5, z: 1.5}
+  squishBoxSize: {x: 1.5, y: 0.25, z: 1.5}

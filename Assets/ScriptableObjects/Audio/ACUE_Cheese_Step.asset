@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50dfcadd48bb444595df4083ebe996d, type: 3}
+  m_Name: ACUE_Cheese_Step
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000}
+  looping: 0
+  _audioClipGroup:
+  - mode: 1
+    clips:
+    - {fileID: 8300000, guid: fbe8d1b3efd1ad04099480942f17c44a, type: 3}
+    - {fileID: 8300000, guid: 869b9241234e7c646b29e828178b4d14, type: 3}
+    - {fileID: 8300000, guid: fc9a4b5519acce943abcd43bf0c22f9b, type: 3}
+    - {fileID: 8300000, guid: 6aef13f6b5e45e247aa7b126834e2479, type: 3}
+    - {fileID: 8300000, guid: 3ed02505166bf4a4ca4eab0c16274126, type: 3}
+    - {fileID: 8300000, guid: 536768935007f014783a2a6aee6927b4, type: 3}
+    - {fileID: 8300000, guid: 8d87e056217958145a5a4e83e705287a, type: 3}
+    - {fileID: 8300000, guid: 98c28328c543e9e4aa5e5a2032c140bf, type: 3}
+    - {fileID: 8300000, guid: f5391bf05782b294eb0356a422750c9e, type: 3}
+    - {fileID: 8300000, guid: 1549b6ffe099f784d8c586abe97e2433, type: 3}
+    - {fileID: 8300000, guid: f0563007ed89dcd48944d1c9851f26f9, type: 3}
+    - {fileID: 8300000, guid: 8fa344a3819467d40b9288ced4ed7464, type: 3}
+    - {fileID: 8300000, guid: 8702e1cdd2135e64fb3809b8b2e7ecfe, type: 3}
