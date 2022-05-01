@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Character_Mouse_Human
       objectReference: {fileID: 0}
+    - target: {fileID: 9015041029993838844, guid: 65e1f183637ca124eb3b5325ee4fb62e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e1f183637ca124eb3b5325ee4fb62e, type: 3}
 --- !u!114 &7468140678811433312 stripped

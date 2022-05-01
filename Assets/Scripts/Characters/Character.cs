@@ -13,6 +13,8 @@ namespace BrieYourself.Characters {
         Animator attachedAnimator = default;
         [SerializeField]
         BoxCollider attachedBox = default;
+        [SerializeField]
+        Transform attachedHead = default;
 
         [field: Header("Character configuration")]
         [field: SerializeField, Expandable]
@@ -194,6 +196,12 @@ namespace BrieYourself.Characters {
             }
             attachedAnimator.SetTrigger(nameof(onHurt));
             onHurt.Invoke(gameObject);
+        }
+
+        public void AttachToHead(GameObject obj) {
+            obj.transform.parent = attachedHead;
+            obj.transform.localPosition = Vector3.zero;
+            obj.transform.localRotation = Quaternion.identity;
         }
     }
 }
