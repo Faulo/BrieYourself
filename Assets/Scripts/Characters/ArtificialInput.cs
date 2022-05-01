@@ -1,6 +1,7 @@
 using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace BrieYourself.Characters {
     public class ArtificialInput : ComponentFeature<Character> {
@@ -9,15 +10,18 @@ namespace BrieYourself.Characters {
         [SerializeField] LayerMask _whatIsPrey;
         [SerializeField] float _preyDetectionRadius;
         [SerializeField] Animator _attachedAnimator;
+        [SerializeField] float strollRadius = 4f;
+        
 
         public Transform closestHostile { get; private set; }
         public Transform closestPrey { get; private set; }
-
+        public bool wantStroll;
         public Character character => observedComponent;
 
         protected void FixedUpdate() {
             DetectHostiles();
             DetectPrey();
+            _attachedAnimator.SetBool("wantStroll", wantStroll);
         }
 
         void DetectHostiles() {
@@ -66,7 +70,13 @@ namespace BrieYourself.Characters {
                 _attachedAnimator.SetFloat("closestPreyDistance", Mathf.Infinity);
             }
         }
-
+        
+        public Vector3 CalcStrollGoal() {
+            Vector3 goal = new Vector3 {y = transform.position.y, x =  transform.position.x + Random.Range(-strollRadius, strollRadius),
+                z = transform.position.z + Random.Range(-strollRadius, strollRadius)};
+            return goal;
+        }
+        
         protected override void OnValidate() {
             base.OnValidate();
             if (!_attachedAnimator) {
