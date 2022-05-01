@@ -17,8 +17,8 @@ MonoBehaviour:
   stepDuration: 0.2
   accelerationDuration: 0.1
   rotationDuration: 0.3
-  jumpSpeed: 10
+  jumpSpeed: 28.4
   jumpAbortMultiplier: 0.25
   drag: 0.1
-  defaultBoxSize: {x: 1.5, y: 2.5, z: 1.5}
+  defaultBoxSize: {x: 1.5, y: 2, z: 1.5}
   squishBoxSize: {x: 4, y: 0.25, z: 4}
