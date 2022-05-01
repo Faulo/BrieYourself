@@ -1,4 +1,3 @@
-using System;
 using MyBox;
 using Slothsoft.UnityExtensions;
 using UnityEngine;
@@ -125,6 +124,8 @@ namespace BrieYourself.Characters {
         UnityEvent<GameObject> onBecomeAirborne = new UnityEvent<GameObject>();
         [SerializeField]
         UnityEvent<GameObject> onStep = new UnityEvent<GameObject>();
+        [SerializeField]
+        UnityEvent<GameObject> onHurt = new UnityEvent<GameObject>();
 
         [Header("Runtime fields")]
         [SerializeField, ReadOnly]
@@ -133,6 +134,8 @@ namespace BrieYourself.Characters {
         public float rotationAcceleration = 0;
         [SerializeField, ReadOnly]
         public Vector2 intendedLook = Vector2.zero;
+
+        bool canBeHurt => attachedController.enabled;
 
         public Vector3 boxSize {
             get => attachedBox.size;
@@ -179,6 +182,14 @@ namespace BrieYourself.Characters {
                     verticalSpeed = Physics.gravity.y * Time.deltaTime;
                 }
             }
+        }
+
+        public void TakeDamage() {
+            if (!canBeHurt) {
+                return;
+            }
+            attachedAnimator.SetTrigger(nameof(onHurt));
+            onHurt.Invoke(gameObject);
         }
     }
 }
