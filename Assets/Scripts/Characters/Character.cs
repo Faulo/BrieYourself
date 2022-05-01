@@ -141,7 +141,7 @@ namespace BrieYourself.Characters {
             get => attachedBox.size;
             set {
                 attachedBox.size = value;
-                attachedBox.center = new Vector3(0, value.y / 2, 0);
+                attachedBox.center = new Vector3(0, (value.y / 2) + config.feetHeight, 0);
             }
         }
 
@@ -160,9 +160,12 @@ namespace BrieYourself.Characters {
                 TryGetComponent(out attachedBox);
             }
         }
-        protected void Start() {
+        protected void Update() {
             Assert.IsTrue(config);
             boxSize = config.defaultBoxSize;
+            attachedController.radius = config.capsuleRadius;
+            attachedController.height = config.capsuleHeight;
+            attachedController.center = Vector3.up * config.capsuleOffset;
         }
         float stepTimer;
         protected void FixedUpdate() {
