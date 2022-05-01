@@ -24,6 +24,15 @@ namespace BrieYourself.Characters {
         [SerializeField, Range(0, 100)]
         public float drag = 1;
 
+        [Header("Volume")]
+        [SerializeField]
+        public float capsuleRadius = 1;
+        [SerializeField]
+        public float capsuleHeight = 1;
+        [SerializeField]
+        public float capsuleOffset = 1;
+        [SerializeField]
+        public float feetHeight = 0;
         [SerializeField]
         public Vector3 defaultBoxSize = Vector3.one;
         [SerializeField]

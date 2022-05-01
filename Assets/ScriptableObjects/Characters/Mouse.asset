@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98ffb09266b0c9743b41aa2068785f14, type: 3}
-  m_Name: Cheese
+  m_Name: Mouse
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
-  maximumSpeed: 10
-  stepDuration: 0.2
+  maximumSpeed: 20
+  stepDuration: 0.3
   accelerationDuration: 0.1
   rotationDuration: 0.3
-  jumpSpeed: 10
+  jumpSpeed: 30
   jumpAbortMultiplier: 0.25
   drag: 0.1
-  capsuleRadius: 0.75
-  capsuleHeight: 1.8
-  capsuleOffset: 1.2
-  feetHeight: 0.65
-  defaultBoxSize: {x: 1.5, y: 1.5, z: 1.5}
-  squishBoxSize: {x: 1.5, y: 0.25, z: 1.5}
+  capsuleRadius: 3
+  capsuleHeight: 8
+  capsuleOffset: 4.25
+  feetHeight: 1.5
+  defaultBoxSize: {x: 6, y: 6, z: 6}
+  squishBoxSize: {x: 6, y: 6, z: 6}
