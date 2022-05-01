@@ -1,20 +1,11 @@
 fileFormatVersion: 2
-guid: ccd9fb62c550bf34cb67acfa62968e7c
+guid: 6f9f7bbc9e652f64a8d91f289756ac2d
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: 8286213966144421055
-    second: Armature|Idle_01
-  - first:
-      74: 1654453302053318886
-    second: Armature|Jump_Fall
-  - first:
-      74: -8658045357852635187
-    second: Armature|Jump_Up_01
-  - first:
-      74: 8349542763059015795
-    second: Armature|Walk
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -47,7 +38,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -100,7 +91,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 100
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
