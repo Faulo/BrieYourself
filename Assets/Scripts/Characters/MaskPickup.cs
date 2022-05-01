@@ -19,8 +19,10 @@ namespace BrieYourself
         }
 
         void OnTriggerEnter(Collider other){
-            if(other.tag== "Player"){
+            if(other.tag== "Player" && other.TryGetComponent<Character>(out character)){
                 GameObject mask = GameObject.Find("P_Mask_Mouse");
+
+                mask.transform.parent = other.transform.
                 mask.GetComponent<MeshRenderer>().enabled = true;
                 Destroy(this.gameObject);
             }
