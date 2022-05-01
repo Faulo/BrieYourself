@@ -199,6 +199,12 @@ PrefabInstance:
       objectReference: {fileID: 7138407016958937210}
     - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
         type: 3}
+      propertyPath: <config>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 69c50cc6b631d1c46a6cf1ecc418d1fa,
+        type: 2}
+    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
+        type: 3}
       propertyPath: onStep.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
