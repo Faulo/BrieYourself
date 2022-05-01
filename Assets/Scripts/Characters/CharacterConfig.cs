@@ -21,5 +21,10 @@ namespace BrieYourself.Characters {
         [Space]
         [SerializeField, Range(0, 100)]
         public float drag = 1;
+
+        [SerializeField]
+        public Vector3 defaultBoxSize = Vector3.one;
+        [SerializeField]
+        public Vector3 squishBoxSize = Vector3.one;
     }
 }

@@ -10,6 +10,8 @@ namespace BrieYourself.Characters {
         public CharacterController attachedController = default;
         [SerializeField]
         Animator attachedAnimator = default;
+        [SerializeField]
+        BoxCollider attachedBox = default;
 
         [field: Header("Character configuration")]
         [field: SerializeField, Expandable]
@@ -111,6 +113,14 @@ namespace BrieYourself.Characters {
         [SerializeField, ReadOnly]
         public Vector2 intendedLook = Vector2.zero;
 
+        public Vector3 boxSize {
+            get => attachedBox.size;
+            set {
+                attachedBox.size = value;
+                attachedBox.center = new Vector3(0, value.y / 2, 0);
+            }
+        }
+
         public event InputProcessor onProcessInput;
 
         public delegate void InputProcessor(ref Vector2 velocity);
@@ -121,6 +131,9 @@ namespace BrieYourself.Characters {
             }
             if (!attachedController) {
                 TryGetComponent(out attachedController);
+            }
+            if (!attachedBox) {
+                TryGetComponent(out attachedBox);
             }
         }
         protected void Start() {

@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedController: {fileID: 6857514407753797259}
   attachedAnimator: {fileID: 0}
+  attachedBox: {fileID: 5288070387145681696}
   <config>k__BackingField: {fileID: 11400000, guid: d599a50a88c06324bac445534bace74f,
     type: 2}
   movementAcceleration: {x: 0, y: 0}
