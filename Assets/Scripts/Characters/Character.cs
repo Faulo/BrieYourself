@@ -168,18 +168,18 @@ namespace BrieYourself.Characters {
             if (attachedController.enabled) {
                 attachedController.Move(velocity * Time.deltaTime);
 
-                if (horizontalSpeed > 1) {
-                    stepTimer += Time.deltaTime;
-                    if (stepTimer > config.stepDuration) {
-                        stepTimer = 0;
-                        onStep.Invoke(gameObject);
-                    }
-                }
-
                 isGrounded = attachedController.isGrounded;
 
                 if (attachedController.isGrounded) {
                     verticalSpeed = Physics.gravity.y * Time.deltaTime;
+
+                    if (horizontalSpeed > 1) {
+                        stepTimer += Time.deltaTime;
+                        if (stepTimer > config.stepDuration) {
+                            stepTimer = 0;
+                            onStep.Invoke(gameObject);
+                        }
+                    }
                 }
             }
         }
