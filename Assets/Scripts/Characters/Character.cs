@@ -162,6 +162,7 @@ namespace BrieYourself.Characters {
         }
         protected void Start() {
             Assert.IsTrue(config);
+            boxSize = config.defaultBoxSize;
         }
         float stepTimer;
         protected void FixedUpdate() {
