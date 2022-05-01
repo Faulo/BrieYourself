@@ -24,13 +24,7 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614555}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614600}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614558}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614580}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614583}
@@ -40,21 +34,6 @@ MonoBehaviour:
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614585}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614635}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614667}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614669}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614641}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614688}
       id: 0
       isStickyNote: 0
   - title: Cross
@@ -89,7 +68,7 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614750}
       id: 0
       isStickyNote: 0
-  - title: Flash
+  - title: Splatter
     position:
       serializedVersion: 2
       x: 3012
@@ -1326,7 +1305,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 4
+      m_SerializableObject: 2
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -2529,7 +2508,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 4
+      m_SerializableObject: 2
     m_Space: 2147483647
   m_Property:
     name: Size
