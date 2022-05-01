@@ -160,7 +160,7 @@ namespace BrieYourself.Characters {
                 TryGetComponent(out attachedBox);
             }
         }
-        protected void Update() {
+        protected void Start() {
             Assert.IsTrue(config);
             boxSize = config.defaultBoxSize;
             attachedController.radius = config.capsuleRadius;
