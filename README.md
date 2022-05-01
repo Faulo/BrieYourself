@@ -1,4 +1,4 @@
-# Brie Yourself
+﻿# Brie Yourself
 A game about ??
 
 ## Jam Details
@@ -9,8 +9,8 @@ Spring Game Jam 2022:
 
 ## Credits
 - Nico Auerswald (programming)
-- Katharina Broswik (3d art, sound design)
-- Elisabeth Harzbecker  (3d art)
-- Ruben Schäfer (level design)
+- Katharina Broswik (3d art, sound design, vfx, voice actress)
+- Elisabeth Harzbecker  (3d art, animation)
+- Ruben Schäfer (level design, animation)
 - Daniel Schulz (programming)
-- Lena Voß (3d art)
+- Lena Voß (3d art, UI)
