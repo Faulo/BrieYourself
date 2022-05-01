@@ -2,17 +2,16 @@ using Slothsoft.UnityExtensions;
 using UnityEngine;
 
 namespace BrieYourself.Characters.AIStateMachines {
-    public class AIFlee : ArtificialBehaviour {
-        [SerializeField] float _fleeSpeed = 2f;
+    public class AIChase : ArtificialBehaviour{
         protected override void StateEnter(in AnimatorStateInfo stateInfo, int layerIndex) {
-
+            
         }
 
         protected override void StateUpdate(in AnimatorStateInfo stateInfo, int layerIndex) {
-            if (!input.closestHostile) {
+            if (!input.closestPrey) {
                 return;
             }
-            var dir = (input.transform.position - input.closestHostile.position).normalized;
+            var dir = (input.closestPrey.transform.position - input.transform.position).normalized;
             character.intendedVelocity = dir.SwizzleXZ();
         }
 

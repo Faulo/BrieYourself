@@ -1,21 +1,27 @@
+using System;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace BrieYourself.Characters {
     public class ArtificialInput : ComponentFeature<Character> {
-        [SerializeField] float _hostileDetectionRadius;
         [SerializeField] LayerMask _whatIsHostile;
+        [SerializeField] float _hostileDetectionRadius;
         [SerializeField] LayerMask _whatIsPrey;
+        [SerializeField] float _preyDetectionRadius;
         [SerializeField] Animator _attachedAnimator;
 
         public Transform closestHostile { get; private set; }
+        public Transform closestPrey { get; private set; }
 
         public Character character => observedComponent;
 
         protected void FixedUpdate() {
             DetectHostiles();
+            DetectPrey();
         }
 
         void DetectHostiles() {
+            closestHostile = null;
             var hits = Physics.SphereCastAll(transform.position, _hostileDetectionRadius,
                 transform.forward, _hostileDetectionRadius, _whatIsHostile);
 
@@ -28,26 +34,36 @@ namespace BrieYourself.Characters {
                 if (hitDistance < closestHostileDistance) {
                     closestHostile = hit.transform;
                 }
-                closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, closestHostile.position));
+            }
+            if (closestHostile) {
+                float closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, closestPrey.position));
                 _attachedAnimator.SetFloat("closestHostileDistance", closestHostileDistance);
+            } else {
+                _attachedAnimator.SetFloat("closestHostileDistance", Mathf.Infinity);
             }
         }
 
         void DetectPrey() {
-            var hits = Physics.SphereCastAll(transform.position, _hostileDetectionRadius,
-                transform.forward, _hostileDetectionRadius, _whatIsPrey);
+            closestPrey = null;
+            var hits = Physics.SphereCastAll(transform.position, _preyDetectionRadius,
+                transform.forward, _preyDetectionRadius, _whatIsPrey);
 
             foreach (var hit in hits) {
-                if (!closestHostile) {
-                    closestHostile = hit.transform;
+                if (!closestPrey) {
+                    closestPrey = hit.transform;
                 }
                 float hitDistance = Mathf.Abs(Vector3.Distance(transform.position, hit.transform.position));
-                float closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, closestHostile.position));
-                if (hitDistance < closestHostileDistance) {
-                    closestHostile = hit.transform;
+                float closestPreyDistance = Mathf.Abs(Vector3.Distance(transform.position, closestPrey.position));
+                if (hitDistance < closestPreyDistance) {
+                    closestPrey = hit.transform;
                 }
-                closestHostileDistance = Mathf.Abs(Vector3.Distance(transform.position, closestHostile.position));
-                _attachedAnimator.SetFloat("closestHostileDistance", closestHostileDistance);
+
+            }
+            if (closestPrey) {
+                float closestPreyDistance = Mathf.Abs(Vector3.Distance(transform.position, closestPrey.position));
+                _attachedAnimator.SetFloat("closestPreyDistance", closestPreyDistance);
+            } else {
+                _attachedAnimator.SetFloat("closestPreyDistance", Mathf.Infinity);
             }
         }
 
