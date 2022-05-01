@@ -150,11 +150,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
         type: 3}
-      propertyPath: onBecomeGrounded.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
-        type: 3}
       propertyPath: onStep.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -176,43 +171,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
         type: 3}
-      propertyPath: onBecomeGrounded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
-        type: 3}
-      propertyPath: onBecomeGrounded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: b0a8e9f5f16910b4c8bbcb06e8757034,
-        type: 2}
-    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
-        type: 3}
-      propertyPath: onBecomeGrounded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
-        type: 3}
-      propertyPath: onBecomeGrounded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
-        type: 3}
       propertyPath: onStep.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BrieYourself.Effects.AudioEffect, BrieYourself
       objectReference: {fileID: 0}
     - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
         type: 3}
-      propertyPath: onBecomeGrounded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BrieYourself.Effects.AudioEffect, BrieYourself
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
-        type: 3}
       propertyPath: onStep.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
-        type: 3}
-      propertyPath: onBecomeGrounded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6857514407753797269, guid: f01071ab9da16e04295510f743030578,
