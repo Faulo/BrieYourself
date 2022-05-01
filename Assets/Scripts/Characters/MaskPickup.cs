@@ -6,27 +6,5 @@ namespace BrieYourself
 {
     public class MaskPickup : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            this.transform.Rotate(0,0,0.1f);
-        }
-
-        void OnTriggerEnter(Collider other){
-            if(other.tag== "Player" && other.TryGetComponent<Character>(out character)){
-                GameObject mask = GameObject.Find("P_Mask_Mouse");
-
-                mask.transform.parent = other.transform.
-                mask.GetComponent<MeshRenderer>().enabled = true;
-                Destroy(this.gameObject);
-            }
-        }
-
     }
 }
