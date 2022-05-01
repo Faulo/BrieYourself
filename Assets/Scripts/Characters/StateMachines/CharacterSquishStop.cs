@@ -2,10 +2,12 @@ using UnityEngine;
 
 namespace BrieYourself.Characters.StateMachines {
     public class CharacterSquishStop : CharacterBehaviour {
+        [SerializeField, Range(0, 100)]
+        float jumpSpeed = 10;
 
         protected override void StateEnter(in AnimatorStateInfo stateInfo, int layerIndex) {
             if (character.TryGetComponent<Rigidbody>(out var rigidbody)) {
-                rigidbody.velocity = Vector3.up * config.jumpSpeed;
+                rigidbody.velocity = Vector3.up * jumpSpeed;
             }
         }
         protected override void StateUpdate(in AnimatorStateInfo stateInfo, int layerIndex) {

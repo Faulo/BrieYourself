@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityMultiplier: 2
   drag: 0
-  transformDuration: 0.016666668
 --- !u!1101 &-6916625110388627607
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -192,7 +191,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Squish_Stop
-  m_Speed: 1
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -792667778015971777}
@@ -410,7 +409,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Squish_Start
-  m_Speed: 60
+  m_Speed: 30
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6916625110388627607}
@@ -714,6 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618adda21bda58d4f8bf22155aecc3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSpeed: 5
 --- !u!114 &6598052637162946227
 MonoBehaviour:
   m_ObjectHideFlags: 1
