@@ -1,10 +1,11 @@
+using MyBox;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
     [SerializeField]
-    int sceneToLoadBuildIndex;
+    SceneReference sceneToLoad = new();
     [SerializeField]
     GameObject UIElements;
     [SerializeField]
@@ -24,7 +25,7 @@ public class MainMenu : MonoBehaviour {
 
     public void StartGame() {
         // Debug.Log("Start Game Please");
-        SceneManager.LoadScene(sceneToLoadBuildIndex);
+        sceneToLoad.LoadScene();
     }
 
     public void CloseGame() {

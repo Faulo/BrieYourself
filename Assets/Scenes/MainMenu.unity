@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d4e54fb66bd95d14daa4055f6e205e3c,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: ddc6661c97cadae4ab79ea77ec68454a,
     type: 2}
 --- !u!196 &4
@@ -835,7 +836,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &658607827
 Transform:
@@ -1303,7 +1304,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1243868033
 Transform:
@@ -1345,7 +1346,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1419,7 +1420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0.7000122, y: 0}
+  m_AnchoredPosition: {x: 0.6999512, y: 0}
   m_SizeDelta: {x: 1358.3562, y: 1080}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1276539561
@@ -1585,7 +1586,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61da34acd258a2d43b61e1970be47c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoadBuildIndex: 1
+  sceneToLoad:
+    Scene: {fileID: 102900000, guid: 30d31d42d1c3b6546a03a042c4f70352, type: 3}
+    SceneName: Level
+    sceneIndex: 1
+    sceneEnabled: 1
   UIElements: {fileID: 89162432}
   buttons: {fileID: 1853908706}
   ButtonHighlightedOnStart: {fileID: 1925294133}
@@ -1993,7 +1998,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &1740369695
 MeshCollider:
@@ -2020,7 +2025,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
