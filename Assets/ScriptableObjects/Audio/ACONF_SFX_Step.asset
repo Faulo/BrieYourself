@@ -16,18 +16,18 @@ MonoBehaviour:
   outputAudioMixerGroup: {fileID: 0}
   _priorityLevel: 128
   mute: 0
-  volumeMinimum: 0.4
-  volumeMaximum: 0.6
-  pitchMinimum: 0.8
-  pitchMaximum: 1.2
+  volumeMinimum: 0.2
+  volumeMaximum: 0.3
+  pitchMinimum: 0.7
+  pitchMaximum: 1.3
   panStereo: 0
   reverbZoneMix: 1
   spatialBlend: 1
   dopplerLevel: 1
   spread: 360
   rolloffMode: 0
-  minDistance: 1
-  maxDistance: 500
+  minDistance: 5
+  maxDistance: 20
   bypassEffects: 0
   bypassListenerEffects: 0
   bypassReverbZones: 0

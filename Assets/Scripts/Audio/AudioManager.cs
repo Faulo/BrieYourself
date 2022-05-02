@@ -12,7 +12,7 @@ namespace BrieYourself.Audio {
         SoundEmitter _currentMusicTrack;
 
         protected void Awake() {
-            _soundEmitterPool = new GameObjectPool(transform, _soundEmitterPrefab, 12);
+            _soundEmitterPool = new GameObjectPool(transform, _soundEmitterPrefab, 32);
         }
 
         protected void OnEnable() {

@@ -18,16 +18,16 @@ MonoBehaviour:
   mute: 0
   volumeMinimum: 0.9
   volumeMaximum: 1
-  pitchMinimum: 0.9
-  pitchMaximum: 1.1
+  pitchMinimum: 0.8
+  pitchMaximum: 1.2
   panStereo: 0
   reverbZoneMix: 1
   spatialBlend: 1
   dopplerLevel: 1
   spread: 360
   rolloffMode: 0
-  minDistance: 1
-  maxDistance: 500
+  minDistance: 20
+  maxDistance: 100
   bypassEffects: 0
   bypassListenerEffects: 0
   bypassReverbZones: 0

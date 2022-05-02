@@ -554,8 +554,8 @@ MonoBehaviour:
   onStateEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: b6a6326739730fd4c855ea29e2ebbe80, type: 2}
-        m_TargetAssemblyTypeName: BrieYourself.Effects.AudioEffect, BrieYourself
+      - m_Target: {fileID: 11400000, guid: 3b4abb17667987b44b35381aae776e93, type: 2}
+        m_TargetAssemblyTypeName: BrieYourself.Effects.GameObjectEffect, BrieYourself
         m_MethodName: Play
         m_Mode: 0
         m_Arguments:
