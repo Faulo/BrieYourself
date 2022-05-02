@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ffb09266b0c9743b41aa2068785f14, type: 3}
+  m_Name: Cheese
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000}
+  layer: 6
+  maximumSpeed: 10
+  stepDuration: 0.2
+  accelerationDuration: 0.1
+  rotationDuration: 0.3
+  jumpSpeed: 10
+  jumpAbortMultiplier: 0.25
+  drag: 0.1
+  capsuleRadius: 0.75
+  capsuleHeight: 1.8
+  capsuleOffset: 1.2
+  feetHeight: 0.65
+  defaultBoxSize: {x: 1.5, y: 1.5, z: 1.5}
+  squishBoxSize: {x: 1.5, y: 0.25, z: 1.5}
