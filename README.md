@@ -9,7 +9,7 @@ Spring Game Jam 2022:
 
 ## Credits
 - Nico Auerswald (programming)
-- Katharina Broswik (3d art, sound design, vfx, voice actress)
+- Katharina Broswik (3d art, sound design, vfx, voice acting)
 - Elisabeth Harzbecker  (3d art, animation)
 - Ruben Schäfer (level design, animation)
 - Daniel Schulz (programming)
