@@ -22,3 +22,6 @@ $RECYCLE.BIN/
 !/ProjectSettings/
 !/Packages/
 /Assets/InitTestScene*
+
+# == Blender ==
+*.blend1*
