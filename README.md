@@ -1,5 +1,5 @@
 ﻿# Brie Yourself
-A game about ??
+A game about the circle of life from the perspective of a block of cheese.
 
 ## Jam Details
 Spring Game Jam 2022: 
@@ -12,5 +12,6 @@ Spring Game Jam 2022:
 - Katharina Broswik (3d art, sound design, vfx, voice acting)
 - Elisabeth Harzbecker  (3d art, animation)
 - Ruben Schäfer (level design, animation)
+- Nic Schilling (music)
 - Daniel Schulz (programming)
 - Lena Voß (3d art, UI)
