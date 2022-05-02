@@ -42,10 +42,10 @@ namespace BrieYourself.Characters {
         public bool intendsJump {
             get => attachedAnimator.GetBool(nameof(intendsJump));
             set {
-                if (!intendsJump && value) {
-                    intendsJumpStart = true;
+                if (intendsJump != value) {
+                    intendsJumpStart = value;
+                    attachedAnimator.SetBool(nameof(intendsJump), value);
                 }
-                attachedAnimator.SetBool(nameof(intendsJump), value);
             }
         }
         public bool intendsJumpStart {
@@ -55,10 +55,10 @@ namespace BrieYourself.Characters {
         public bool intendsInteract {
             get => attachedAnimator.GetBool(nameof(intendsInteract));
             set {
-                if (!intendsInteract && value) {
-                    intendsInteractStart = true;
+                if (intendsInteract != value) {
+                    attachedAnimator.SetBool(nameof(intendsInteract), value);
+                    intendsInteractStart = value;
                 }
-                attachedAnimator.SetBool(nameof(intendsInteract), value);
             }
         }
         public bool intendsInteractStart {

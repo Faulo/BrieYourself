@@ -4,15 +4,13 @@ using UnityEngine;
 namespace BrieYourself.Characters.StateMachines {
     public class CharacterSquishStart : CharacterBehaviour {
         [SerializeField]
-        float velocityMultiplier = 1;
+        float speed = 1;
         [SerializeField]
         float drag = 1;
 
         Rigidbody rigidbody;
-        float speed;
 
         protected override void StateEnter(in AnimatorStateInfo stateInfo, int layerIndex) {
-            speed = character.velocity.magnitude;
             character.attachedController.enabled = false;
 
             rigidbody = character.gameObject.AddComponent<Rigidbody>();
@@ -29,7 +27,7 @@ namespace BrieYourself.Characters.StateMachines {
             character.boxSize = config.squishBoxSize;
 
             rigidbody.isKinematic = false;
-            rigidbody.velocity = velocityMultiplier * speed * character.intendedVelocity.SwizzleXZ();
+            rigidbody.velocity = speed * character.intendedVelocity.SwizzleXZ();
         }
     }
 }
