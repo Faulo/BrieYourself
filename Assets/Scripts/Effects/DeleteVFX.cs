@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BrieYourself {
+namespace BrieYourself.Effects {
     public class DeleteVFX : MonoBehaviour {
         [SerializeField]
         GameObject objectToDelete = default;

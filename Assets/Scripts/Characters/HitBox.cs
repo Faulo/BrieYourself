@@ -1,7 +1,6 @@
-using BrieYourself.Characters;
 using UnityEngine;
 
-namespace BrieYourself {
+namespace BrieYourself.Characters {
     public class HitBox : MonoBehaviour {
         [SerializeField]
         Character owner = default;

@@ -11,7 +11,7 @@ namespace BrieYourself.Characters.AIStateMachines {
         }
 
         protected override void StateUpdate(in AnimatorStateInfo stateInfo, int layerIndex) {
-            var dir = (strollGoal - input.transform.position);
+            var dir = strollGoal - input.transform.position;
             if (dir.magnitude < 1f) {
                 character.intendedVelocity = Vector2.zero;
                 return;

@@ -4,11 +4,11 @@ using UnityEngine.Events;
 namespace BrieYourself.Characters.StateMachines {
     public class StateMachineEvents : CharacterBehaviour {
         [SerializeField]
-        UnityEvent<GameObject> onStateEnter = new UnityEvent<GameObject>();
+        UnityEvent<GameObject> onStateEnter = new();
         [SerializeField]
-        UnityEvent<GameObject> onStateUpdate = new UnityEvent<GameObject>();
+        UnityEvent<GameObject> onStateUpdate = new();
         [SerializeField]
-        UnityEvent<GameObject> onStateExit = new UnityEvent<GameObject>();
+        UnityEvent<GameObject> onStateExit = new();
 
         protected override void StateEnter(in AnimatorStateInfo stateInfo, int layerIndex) {
             onStateEnter?.Invoke(animator.gameObject);

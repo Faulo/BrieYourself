@@ -12,28 +12,26 @@ public class MainMenu : MonoBehaviour {
     [SerializeField]
     Button ButtonHighlightedOnStart;
 
-
-    // Start is called before the first frame update
-    void Start() {
-
-    }
-
-    void OnEnable() {
-        ButtonHighlightedOnStart.Select(); //Force unity to select the button which will then highlight it
+    protected void Start() {
+        //Force unity to select the button which will then highlight it
+        ButtonHighlightedOnStart.Select();
     }
 
     public void PlayCredits() {
-        Debug.Log("Credits Start");
+        // Debug.Log("Credits Start");
         UIElements.GetComponent<Animation>().Play();
     }
 
     public void StartGame() {
-        Debug.Log("Start Game Please");
+        // Debug.Log("Start Game Please");
         SceneManager.LoadScene(sceneToLoadBuildIndex);
     }
 
     public void CloseGame() {
-        Debug.Log("CLOSE THE GAME!!!!");
+        // Debug.Log("CLOSE THE GAME!!!!");
         Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode();
+#endif
     }
 }

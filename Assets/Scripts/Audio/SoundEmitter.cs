@@ -9,7 +9,7 @@ namespace BrieYourself.Audio {
 
         public event Action<SoundEmitter> onSoundFinishedPlaying;
 
-        void Awake() {
+        protected void Awake() {
             _audioSource = GetComponent<AudioSource>();
             _audioSource.playOnAwake = false;
 
@@ -50,7 +50,7 @@ namespace BrieYourself.Audio {
         }
 
         public void SetVolume(float volume) {
-            _audioSource.volume = (Mathf.Clamp(volume, 0f, 1f));
+            _audioSource.volume = Mathf.Clamp01(volume);
         }
 
         public float GetVolume() {

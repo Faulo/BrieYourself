@@ -8,7 +8,6 @@ namespace BrieYourself.Characters {
         CinemachineVirtualCamera cameraPrefab = default;
 
         CinemachineVirtualCamera cameraInstance;
-        CameraControllerAxisInputProvider cameraAxis;
 
         protected void OnEnable() {
             cameraInstance = Instantiate(cameraPrefab);

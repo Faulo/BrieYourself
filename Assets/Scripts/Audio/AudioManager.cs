@@ -26,7 +26,7 @@ namespace BrieYourself.Audio {
         }
 
         void PlayAudioCue(AudioCueRequestData audioCueRequestData) {
-            var clipsToPlay = audioCueRequestData.AudioCue.GetClips();
+            var clipsToPlay = audioCueRequestData.audioCue.GetClips();
             int numberOfClips = clipsToPlay.Length;
 
             for (int i = 0; i < numberOfClips; i++) {
@@ -36,10 +36,10 @@ namespace BrieYourself.Audio {
                     return;
                 }
 
-                soundEmitter.PlayAudioClip(clipsToPlay[i], audioCueRequestData.AudioConfig,
-                    audioCueRequestData.AudioCue.looping, audioCueRequestData.Position);
+                soundEmitter.PlayAudioClip(clipsToPlay[i], audioCueRequestData.audioConfig,
+                    audioCueRequestData.audioCue.looping, audioCueRequestData.position);
 
-                if (!audioCueRequestData.AudioCue.looping) {
+                if (!audioCueRequestData.audioCue.looping) {
                     soundEmitter.onSoundFinishedPlaying += OnSoundEmitterFinishedPlaying;
                 }
             }
@@ -47,7 +47,7 @@ namespace BrieYourself.Audio {
 
         void PlayMusic(AudioCueRequestData audioCueRequestData) {
 
-            var clipsToPlay = audioCueRequestData.AudioCue.GetClips();
+            var clipsToPlay = audioCueRequestData.audioCue.GetClips();
             int numberOfClips = clipsToPlay.Length;
 
             for (int i = 0; i < numberOfClips; i++) {
@@ -64,11 +64,11 @@ namespace BrieYourself.Audio {
                 }
 
                 _currentMusicTrack = newMusicTrack;
-                _currentMusicTrack.PlayAudioClip(clipsToPlay[i], audioCueRequestData.AudioConfig,
-                    audioCueRequestData.AudioCue.looping, audioCueRequestData.Position);
-                FadeIn(_currentMusicTrack, audioCueRequestData.AudioConfig.volume, 0.5f);
+                _currentMusicTrack.PlayAudioClip(clipsToPlay[i], audioCueRequestData.audioConfig,
+                    audioCueRequestData.audioCue.looping, audioCueRequestData.position);
+                FadeIn(_currentMusicTrack, audioCueRequestData.audioConfig.volume, 0.5f);
 
-                if (!audioCueRequestData.AudioCue.looping) {
+                if (!audioCueRequestData.audioCue.looping) {
                     newMusicTrack.onSoundFinishedPlaying += OnSoundEmitterFinishedPlaying;
                 }
             }

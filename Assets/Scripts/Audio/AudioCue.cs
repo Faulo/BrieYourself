@@ -7,7 +7,7 @@ namespace BrieYourself.Audio {
         [SerializeField] AudioConfigSo _audioConfig;
         [SerializeField] AudioCueRequestEventChannel _audioCueChannel;
 
-        void Start() {
+        protected void Start() {
             if (_playOnStart) {
                 RequestAudio(transform.position);
             }

@@ -121,13 +121,13 @@ namespace BrieYourself.Characters {
 
         [Header("Events")]
         [SerializeField]
-        UnityEvent<GameObject> onBecomeGrounded = new UnityEvent<GameObject>();
+        UnityEvent<GameObject> onBecomeGrounded = new();
         [SerializeField]
-        UnityEvent<GameObject> onBecomeAirborne = new UnityEvent<GameObject>();
+        UnityEvent<GameObject> onBecomeAirborne = new();
         [SerializeField]
-        UnityEvent<GameObject> onStep = new UnityEvent<GameObject>();
+        UnityEvent<GameObject> onStep = new();
         [SerializeField]
-        UnityEvent<GameObject> onHurt = new UnityEvent<GameObject>();
+        UnityEvent<GameObject> onHurt = new();
 
         [Header("Runtime fields")]
         [SerializeField, ReadOnly]

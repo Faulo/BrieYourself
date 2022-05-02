@@ -1,15 +1,14 @@
-using BrieYourself.Characters;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BrieYourself {
+namespace BrieYourself.Characters {
     public class MaskPickup : MonoBehaviour {
         [SerializeField]
         GameObject mask = default;
         [SerializeField]
         CharacterConfig config = default;
         [SerializeField]
-        UnityEvent<GameObject> onPickUp = new UnityEvent<GameObject>();
+        UnityEvent<GameObject> onPickUp = new();
 
         protected void Update() {
             transform.Rotate(0, 0.1f, 0);
