@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AudioEffect_Mouse_Step
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000}
-  audioCue: {fileID: 11400000, guid: 7c6521bde9644f646a887663b3095b47, type: 2}
+  audioCue: {fileID: 11400000, guid: 6d158b3575a56bd4b83fd67fe311c0d2, type: 2}
   audioConfig: {fileID: 11400000, guid: 1c1d82f057edcaf449d6c98f04bb28a8, type: 2}
   audioChannel: {fileID: 11400000, guid: 06cdb8630386f554ca042e7c29535f43, type: 2}
