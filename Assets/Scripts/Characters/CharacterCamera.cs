@@ -10,7 +10,7 @@ namespace BrieYourself.Characters {
         CinemachineVirtualCamera cameraInstance;
 
         protected void OnEnable() {
-            cameraInstance = Instantiate(cameraPrefab);
+            cameraInstance = Instantiate(cameraPrefab, transform.position - (transform.forward * 10), transform.rotation);
             cameraInstance.LookAt = observedComponent.transform;
             cameraInstance.Follow = observedComponent.transform;
             if (cameraInstance.TryGetComponent<CameraControllerAxisInputProvider>(out var cameraAxis)) {

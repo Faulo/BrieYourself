@@ -163,6 +163,7 @@ namespace BrieYourself.Characters {
             }
         }
         protected void Start() {
+            intendedRotation = transform.eulerAngles.y;
             ApplyConfig();
         }
         float stepTimer;

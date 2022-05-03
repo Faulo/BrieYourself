@@ -15,10 +15,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace BrieYourself.Characters {
-    public partial class @PlayerActions : IInputActionCollection2, IDisposable {
+namespace BrieYourself.Characters
+{
+    public partial class @PlayerActions : IInputActionCollection2, IDisposable
+    {
         public InputActionAsset asset { get; }
-        public @PlayerActions() {
+        public @PlayerActions()
+        {
             asset = InputActionAsset.FromJson(@"{
     ""name"": ""PlayerActions"",
     ""maps"": [
@@ -195,6 +198,61 @@ namespace BrieYourself.Characters {
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""2785d4a9-941b-4e42-a80d-be356e1d8d7d"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLook"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""65e778be-6f3c-4b72-9a8a-90d093a3213c"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1300f15d-df3a-4028-9cc2-70b421b8ea9d"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d7973b36-a4f7-419d-854a-1482c7c898fe"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""6f911af8-56ec-4418-b5a2-83e244bbe283"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StickLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""50a94638-8051-4d44-9483-cf858a3afefc"",
                     ""path"": ""<Mouse>/delta"",
@@ -219,60 +277,71 @@ namespace BrieYourself.Characters {
             m_Avatar_MouseLook = m_Avatar.FindAction("MouseLook", throwIfNotFound: true);
         }
 
-        public void Dispose() {
+        public void Dispose()
+        {
             UnityEngine.Object.Destroy(asset);
         }
 
-        public InputBinding? bindingMask {
+        public InputBinding? bindingMask
+        {
             get => asset.bindingMask;
             set => asset.bindingMask = value;
         }
 
-        public ReadOnlyArray<InputDevice>? devices {
+        public ReadOnlyArray<InputDevice>? devices
+        {
             get => asset.devices;
             set => asset.devices = value;
         }
 
         public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
 
-        public bool Contains(InputAction action) {
+        public bool Contains(InputAction action)
+        {
             return asset.Contains(action);
         }
 
-        public IEnumerator<InputAction> GetEnumerator() {
+        public IEnumerator<InputAction> GetEnumerator()
+        {
             return asset.GetEnumerator();
         }
 
-        IEnumerator IEnumerable.GetEnumerator() {
+        IEnumerator IEnumerable.GetEnumerator()
+        {
             return GetEnumerator();
         }
 
-        public void Enable() {
+        public void Enable()
+        {
             asset.Enable();
         }
 
-        public void Disable() {
+        public void Disable()
+        {
             asset.Disable();
         }
         public IEnumerable<InputBinding> bindings => asset.bindings;
 
-        public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false) {
+        public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false)
+        {
             return asset.FindAction(actionNameOrId, throwIfNotFound);
         }
-        public int FindBinding(InputBinding bindingMask, out InputAction action) {
+        public int FindBinding(InputBinding bindingMask, out InputAction action)
+        {
             return asset.FindBinding(bindingMask, out action);
         }
 
         // Avatar
-        readonly InputActionMap m_Avatar;
-        IAvatarActions m_AvatarActionsCallbackInterface;
-        readonly InputAction m_Avatar_Move;
-        readonly InputAction m_Avatar_Jump;
-        readonly InputAction m_Avatar_Interact;
-        readonly InputAction m_Avatar_StickLook;
-        readonly InputAction m_Avatar_MouseLook;
-        public struct AvatarActions {
-            @PlayerActions m_Wrapper;
+        private readonly InputActionMap m_Avatar;
+        private IAvatarActions m_AvatarActionsCallbackInterface;
+        private readonly InputAction m_Avatar_Move;
+        private readonly InputAction m_Avatar_Jump;
+        private readonly InputAction m_Avatar_Interact;
+        private readonly InputAction m_Avatar_StickLook;
+        private readonly InputAction m_Avatar_MouseLook;
+        public struct AvatarActions
+        {
+            private @PlayerActions m_Wrapper;
             public AvatarActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Avatar_Move;
             public InputAction @Jump => m_Wrapper.m_Avatar_Jump;
@@ -284,8 +353,10 @@ namespace BrieYourself.Characters {
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
             public static implicit operator InputActionMap(AvatarActions set) { return set.Get(); }
-            public void SetCallbacks(IAvatarActions instance) {
-                if (m_Wrapper.m_AvatarActionsCallbackInterface != null) {
+            public void SetCallbacks(IAvatarActions instance)
+            {
+                if (m_Wrapper.m_AvatarActionsCallbackInterface != null)
+                {
                     @Move.started -= m_Wrapper.m_AvatarActionsCallbackInterface.OnMove;
                     @Move.performed -= m_Wrapper.m_AvatarActionsCallbackInterface.OnMove;
                     @Move.canceled -= m_Wrapper.m_AvatarActionsCallbackInterface.OnMove;
@@ -303,7 +374,8 @@ namespace BrieYourself.Characters {
                     @MouseLook.canceled -= m_Wrapper.m_AvatarActionsCallbackInterface.OnMouseLook;
                 }
                 m_Wrapper.m_AvatarActionsCallbackInterface = instance;
-                if (instance != null) {
+                if (instance != null)
+                {
                     @Move.started += instance.OnMove;
                     @Move.performed += instance.OnMove;
                     @Move.canceled += instance.OnMove;
@@ -323,7 +395,8 @@ namespace BrieYourself.Characters {
             }
         }
         public AvatarActions @Avatar => new AvatarActions(this);
-        public interface IAvatarActions {
+        public interface IAvatarActions
+        {
             void OnMove(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
