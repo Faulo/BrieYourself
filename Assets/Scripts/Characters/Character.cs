@@ -198,6 +198,7 @@ namespace BrieYourself.Characters {
             obj.transform.parent = attachedHead;
             obj.transform.localPosition = Vector3.zero;
             obj.transform.localRotation = Quaternion.identity;
+            obj.transform.localScale = Vector3.one;
         }
 
         public void SetConfig(CharacterConfig config) {
