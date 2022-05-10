@@ -164,6 +164,14 @@ namespace BrieYourself.Characters {
             if (!attachedBox) {
                 TryGetComponent(out attachedBox);
             }
+
+            if (!attackPoint) {
+                attackPoint = transform;
+            }
+
+            if (!attachedHead) {
+                attachedHead = transform;
+            }
         }
         protected void Start() {
             intendedRotation = transform.eulerAngles.y;
