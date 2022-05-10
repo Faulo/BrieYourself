@@ -55,7 +55,7 @@ namespace BrieYourself.Characters {
                     closestPrey = hit.transform;
                 }
                 float hitDistance = Mathf.Abs(Vector3.Distance(transform.position, hit.transform.position));
-                float closestPreyDistance = Mathf.Abs(Vector3.Distance(character.attackPoint.position, closestPrey.position));
+                float closestPreyDistance = Vector3.Distance(character.attackPoint.position, closestPrey.position);
                 if (hitDistance < closestPreyDistance) {
                     closestPrey = hit.transform;
                 }
