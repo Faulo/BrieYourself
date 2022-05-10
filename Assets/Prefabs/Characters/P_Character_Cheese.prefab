@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &436097574676803949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5739131962617210108}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5739131962617210108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436097574676803949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.543, y: 0.466, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6363494109465007581}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1537227028841191712
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
         type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 5739131962617210108}
+    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
+        type: 3}
       propertyPath: attachedHead
       value: 
       objectReference: {fileID: 4227870384902613940}
@@ -143,6 +179,11 @@ PrefabInstance:
       propertyPath: attachedAnimator
       value: 
       objectReference: {fileID: 909336688085052792}
+    - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
+        type: 3}
+      propertyPath: <attackPoint>k__BackingField
+      value: 
+      objectReference: {fileID: 5739131962617210108}
     - target: {fileID: 6857514407753797268, guid: f01071ab9da16e04295510f743030578,
         type: 3}
       propertyPath: onStep.m_PersistentCalls.m_Calls.Array.size

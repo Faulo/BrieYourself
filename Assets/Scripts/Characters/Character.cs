@@ -15,6 +15,9 @@ namespace BrieYourself.Characters {
         BoxCollider attachedBox = default;
         [SerializeField]
         Transform attachedHead = default;
+        
+        [field: SerializeField] 
+        public Transform attackPoint { get; private set; }= default;
 
         [field: Header("Character configuration")]
         [field: SerializeField, Expandable]
