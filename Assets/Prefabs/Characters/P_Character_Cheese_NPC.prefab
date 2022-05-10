@@ -45,12 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf32bc976fe1d9e4da0dcd33f41f8078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  observedComponent: {fileID: 0}
-  _hostileDetectionRadius: 20
+  observedComponent: {fileID: 2839376693002115533}
   _whatIsHostile:
     serializedVersion: 2
     m_Bits: 128
+  _hostileDetectionRadius: 20
+  _whatIsPrey:
+    serializedVersion: 2
+    m_Bits: 0
+  _preyDetectionRadius: 0
   _attachedAnimator: {fileID: 7147738361165968641}
+  strollRadius: 4
+  wantStroll: 0
 --- !u!95 &7147738361165968641
 Animator:
   serializedVersion: 4
@@ -153,8 +159,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9015041029993838845, guid: f30093ab73d5b1a42833cc4226e8ccf9,
+        type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f30093ab73d5b1a42833cc4226e8ccf9, type: 3}
+--- !u!114 &2839376693002115533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9015041029993838845, guid: f30093ab73d5b1a42833cc4226e8ccf9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6520264492510650672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c41c5d910605c498fd873e8e52fd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2839376693002115537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9015041029993838817, guid: f30093ab73d5b1a42833cc4226e8ccf9,
