@@ -12,8 +12,9 @@ indent_style = space
 tab_width = 4
 
 # Einstellungen für neue Zeilen
+trim_trailing_whitespace = true
 end_of_line = crlf
-insert_final_newline = false
+insert_final_newline = true:none
 
 #### .NET-Codierungskonventionen ####
 
@@ -107,6 +108,11 @@ csharp_style_unused_value_expression_statement_preference = discard_variable:non
 
 # Einstellungen für using-Anweisungen
 csharp_using_directive_placement = outside_namespace:warning
+
+# New line preferences
+csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = false
+csharp_style_allow_blank_lines_between_consecutive_braces_experimental = false
+csharp_style_allow_embedded_statements_on_same_line_experimental = false
 
 #### C#-Formatierungsregeln ####
 
@@ -270,6 +276,7 @@ dotnet_diagnostic.UNT0022.severity = warning	# Inefficient method to set positio
 dotnet_diagnostic.UNT0023.severity = warning	# Coalescing assignment on Unity objects
 dotnet_diagnostic.UNT0024.severity = warning	# Give priority to scalar calculations over vector calculations
 dotnet_diagnostic.UNT0025.severity = warning	# Input.GetKey overloads with KeyCode argument
+dotnet_diagnostic.UNT0026.severity = warning	# GetComponent always allocates
 
 # @UNT0004+UNT0005: https://docs.unity3d.com/ScriptReference/Time-fixedDeltaTime.html
 # @UNT0007+UNT0008: https://stackoverflow.com/questions/58487442/why-does-resharper-not-suggest-using-null-propagation-for-both-of-these-blocks
