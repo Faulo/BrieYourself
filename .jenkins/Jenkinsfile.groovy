@@ -51,7 +51,7 @@ pipeline {
 							STEAM_CREDENTIALS : '',
 
 							// configuration for deploying to itch
-							ITCH_ID : 'elisabeth-harzbecker/brie-yourself',
+							ITCH_ID : 'elliminator/brie-yourself',
 							ITCH_CREDENTIALS : 'Faulo-itch.io',
 
 							// configuration for deploying to Discord
